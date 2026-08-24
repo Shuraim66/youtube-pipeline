@@ -1,0 +1,72 @@
+# YouTube Pipeline Configuration
+# Copy this file and edit values as needed
+
+# Ollama LLM Configuration
+#
+# Observed on the Port Royal topic (one sample each, so treat as a hint, not a
+# ranking). The validator is the real safety net regardless of model:
+#
+# - qwen2.5-coder:32b - only model that got the earthquake date right
+#                       (June 7, 1692); ~285s per script
+# - qwen2.5-coder:14b - faster (~195s) but dated the quake September 7
+# - herodotus:latest  - wrong date plus banned phrases; despite the historical
+#                       framing it also asserts it followed every rule (Rule 24)
+# - mistral:latest    - fastest (~75s), varies a lot run to run
+ollama:
+  base_url: "http://localhost:11434"
+  model: "qwen2.5-coder:32b"
+  max_tokens: 2500
+  temperature: 0.4
+
+# Validation Settings
+validation:
+  enabled: true
+  check_banned_phrases: true
+  check_concrete_details: true
+  check_factual_accuracy: true
+  min_engagement_score: 7
+  reject_on_errors: false  # Set to true to auto-regenerate
+
+# ComfyUI Local Image Generation
+comfyui:
+  enabled: true
+  base_url: "http://127.0.0.1:8188"
+  model: "v1-5-pruned-emaonly.safetensors"
+  steps: 25
+  width: 1024
+  height: 576
+
+# Colab GPU Batch Generation (optional)
+colab:
+  enabled: false
+  notebook_url: "https://colab.research.google.com/your-notebook"
+  api_key: ""
+
+# Piper TTS Voice Generation
+piper:
+  model_path: "/home/alpha/piper-voices/en-us-amy-low.onnx"
+  config_path: "/home/alpha/piper-voices/en-us-amy-low.onnx.json"
+  sentence_silence: 0.3
+  length_scale: 1.0
+
+# YouTube API Configuration
+youtube:
+  client_secret: "client_secret.json"
+  token_file: "token.json"
+
+# Pipeline Settings
+pipeline:
+  target_duration_minutes: 10
+  words_per_minute: 150
+  videos_per_week: 2
+  images_per_video: 20
+  thumbnail_variants: 3
+
+# Directory Structure
+directories:
+  topics: "data/topics"
+  scripts: "data/scripts"
+  images: "data/images"
+  voice: "data/voice"
+  videos: "data/videos"
+  output: "data/output"

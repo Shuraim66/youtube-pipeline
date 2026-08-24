@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200">
+  <!-- Flat-vector fitness mascot. Layered/rig-ready: each named group is a riggable part.
+       Neutral front pose. Palette: teal tank, charcoal shorts, orange accent, warm skin. -->
+  <defs>
+    <style>
+      .ol   { stroke:#173039; stroke-width:10; stroke-linejoin:round; stroke-linecap:round; }
+      .skin { fill:#e7a667; }
+      .hair { fill:#3a2a20; }
+      .tank { fill:#2f8fa1; }
+      .short{ fill:#26363f; }
+      .acc  { fill:#ef7d3e; }
+      .dk   { fill:#173039; }
+      .wt   { fill:#f4efe4; }
+    </style>
+  </defs>
+
+  <g id="mascot">
+
+    <!-- BACK/legs behind shorts -->
+    <g id="legs">
+      <!-- left leg -->
+      <path class="skin ol" d="M372,846 L440,846 L434,1060 Q432,1082 403,1082 Q376,1082 376,1060 Z"/>
+      <!-- right leg -->
+      <path class="skin ol" d="M528,846 L460,846 L466,1060 Q468,1082 497,1082 Q524,1082 524,1060 Z"/>
+      <!-- left shoe -->
+      <path class="acc ol" d="M360,1058 Q360,1104 384,1112 L452,1112 Q466,1108 462,1090 L436,1066 Q400,1078 360,1058 Z"/>
+      <!-- right shoe -->
+      <path class="acc ol" d="M540,1058 Q540,1104 516,1112 L448,1112 Q434,1108 438,1090 L464,1066 Q500,1078 540,1058 Z"/>
+      <!-- soles -->
+      <rect class="wt" x="372" y="1104" width="94" height="14" rx="7"/>
+      <rect class="wt" x="434" y="1104" width="94" height="14" rx="7"/>
+    </g>
+
+    <!-- TORSO (skin base: shoulders + trunk) -->
+    <g id="torso">
+      <path class="skin ol" d="M300,472 Q300,420 362,414 L538,414 Q600,420 600,472 L566,706 Q566,744 450,744 Q334,744 334,706 Z"/>
+    </g>
+
+    <!-- SHORTS -->
+    <g id="shorts">
+      <path class="short ol" d="M348,702 L552,702 L560,852 Q560,872 505,872 L470,872 L460,796 L440,796 L430,872 L395,872 Q340,872 340,852 Z"/>
+    </g>
+
+    <!-- TANK TOP over chest -->
+    <g id="tank">
+      <path class="tank ol" d="M352,452 L548,452 L540,708 Q540,738 450,738 Q360,738 360,708 Z"/>
+      <path class="tank ol" d="M360,420 Q386,426 402,460 L362,470 Q346,442 344,424 Z"/>
+      <path class="tank ol" d="M540,420 Q514,426 498,460 L538,470 Q554,442 556,424 Z"/>
+    </g>
+
+    <!-- ARMS -->
+    <g id="arm-left">
+      <path class="skin ol" d="M356,458 Q296,474 292,566 Q292,660 336,712 L376,690 Q350,632 356,556 Q360,496 384,472 Z"/>
+      <circle class="skin ol" cx="342" cy="726" r="40"/>
+    </g>
+    <g id="arm-right">
+      <path class="skin ol" d="M544,458 Q604,474 608,566 Q608,660 564,712 L524,690 Q550,632 544,556 Q540,496 516,472 Z"/>
+      <circle class="skin ol" cx="558" cy="726" r="40"/>
+    </g>
+
+    <!-- NECK -->
+    <g id="neck">
+      <rect class="skin ol" x="410" y="356" width="80" height="66" rx="24"/>
+    </g>
+
+    <!-- HEAD -->
+    <g id="head">
+      <ellipse class="skin ol" cx="360" cy="278" rx="20" ry="30"/>
+      <ellipse class="skin ol" cx="540" cy="278" rx="20" ry="30"/>
+      <rect class="skin ol" x="330" y="150" width="240" height="232" rx="92"/>
+      <!-- hair -->
+      <path class="hair ol" d="M330,246 Q328,150 450,150 Q572,150 570,246 Q520,206 450,206 Q380,206 330,246 Z"/>
+      <!-- headband accent -->
+      <rect class="acc ol" x="322" y="230" width="256" height="36" rx="18"/>
+    </g>
+
+    <!-- FACE (eyes, brows, mouth) -->
+    <g id="face">
+      <rect class="dk" x="386" y="270" width="44" height="13" rx="6" transform="rotate(-8 408 276)"/>
+      <rect class="dk" x="470" y="270" width="44" height="13" rx="6" transform="rotate(8 492 276)"/>
+      <ellipse class="dk" cx="408" cy="306" rx="15" ry="19"/>
+      <ellipse class="dk" cx="492" cy="306" rx="15" ry="19"/>
+      <circle class="wt" cx="413" cy="300" r="5"/>
+      <circle class="wt" cx="497" cy="300" r="5"/>
+      <path d="M405,346 Q450,378 495,346" fill="none" stroke="#173039" stroke-width="10" stroke-linecap="round"/>
+    </g>
+
+  </g>
+</svg>

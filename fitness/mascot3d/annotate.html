@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>VOLT annotate</title>
+<style>
+  body { margin:0; font-family: system-ui, sans-serif; background:#1b2130; color:#e7ecf5; }
+  header { padding:10px 14px; background:#232b3d; display:flex; gap:14px; align-items:center; flex-wrap:wrap; position:sticky; top:0; }
+  header b { color:#4da3ff; }
+  .ctl { display:flex; gap:6px; align-items:center; }
+  button, label.btn { background:#2f6bff; color:#fff; border:0; padding:8px 12px; border-radius:6px; cursor:pointer; font-size:14px; }
+  button.sec { background:#3a445c; }
+  input[type=range]{ width:120px; }
+  .swatch { width:22px; height:22px; border-radius:50%; border:2px solid #fff8; cursor:pointer; }
+  .swatch.on { border-color:#fff; box-shadow:0 0 0 2px #4da3ff; }
+  #wrap { padding:14px; }
+  canvas { max-width:100%; height:auto; background:#0c0f16; border:1px solid #333c52; border-radius:6px; touch-action:none; cursor:crosshair; }
+  .hint { font-size:13px; color:#9fb0c9; }
+</style>
+</head>
+<body>
+<header>
+  <b>VOLT annotate</b>
+  <label class="btn">1. Open render… <input id="file" type="file" accept="image/*" style="display:none"></label>
+  <div class="ctl">Color:
+    <span class="swatch on" style="background:#ff2b6d" data-c="#ff2b6d"></span>
+    <span class="swatch" style="background:#ffd400" data-c="#ffd400"></span>
+    <span class="swatch" style="background:#00e5ff" data-c="#00e5ff"></span>
+    <span class="swatch" style="background:#ffffff" data-c="#ffffff"></span>
+  </div>
+  <div class="ctl">Brush <input id="size" type="range" min="2" max="30" value="7"></div>
+  <button id="undo" class="sec">Undo</button>
+  <button id="clear" class="sec">Clear</button>
+  <button id="save">2. Download marked ↓</button>
+  <span class="hint">Draw on the problem spots, then Download. Saves to your Downloads folder.</span>
+</header>
+<div id="wrap">
+  <canvas id="c" width="900" height="1150"></canvas>
+  <p class="hint">Tip: after downloading, move it into this folder so I can see it, e.g.<br>
+  <code>mv ~/Downloads/volt_markup.png fitness/mascot3d/renders/</code></p>
+</div>
+<script>
+const c = document.getElementById('c'), ctx = c.getContext('2d');
+let img = null, strokes = [], cur = null, color = '#ff2b6d';
+const size = document.getElementById('size');
+
+document.getElementById('file').addEventListener('change', e => {
+  const f = e.target.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = () => { const im = new Image(); im.onload = () => {
+    img = im; c.width = im.naturalWidth; c.height = im.naturalHeight; strokes = []; redraw();
+  }; im.src = r.result; };
+  r.readAsDataURL(f);   // data URL = canvas stays exportable (no taint)
+});
+
+document.querySelectorAll('.swatch').forEach(s => s.addEventListener('click', () => {
+  document.querySelectorAll('.swatch').forEach(x => x.classList.remove('on'));
+  s.classList.add('on'); color = s.dataset.c;
+}));
+
+function pos(e){
+  const r = c.getBoundingClientRect();
+  return { x:(e.clientX - r.left) * (c.width / r.width),
+           y:(e.clientY - r.top)  * (c.height / r.height) };
+}
+c.addEventListener('pointerdown', e => {
+  if(!img) return; c.setPointerCapture(e.pointerId);
+  cur = { color, w:+size.value * (c.width/ c.getBoundingClientRect().width), pts:[pos(e)] };
+  strokes.push(cur); redraw();
+});
+c.addEventListener('pointermove', e => { if(cur){ cur.pts.push(pos(e)); redraw(); } });
+c.addEventListener('pointerup',   () => { cur = null; });
+
+function redraw(){
+  if(img) ctx.drawImage(img, 0, 0, c.width, c.height);
+  for(const s of strokes){
+    ctx.strokeStyle = s.color; ctx.lineWidth = s.w; ctx.lineCap='round'; ctx.lineJoin='round';
+    ctx.beginPath(); s.pts.forEach((p,i)=> i? ctx.lineTo(p.x,p.y): ctx.moveTo(p.x,p.y)); ctx.stroke();
+  }
+}
+document.getElementById('undo').onclick = () => { strokes.pop(); redraw(); };
+document.getElementById('clear').onclick = () => { strokes = []; redraw(); };
+document.getElementById('save').onclick = () => {
+  if(!img){ alert('Open a render first.'); return; }
+  const a = document.createElement('a');
+  a.download = 'volt_markup.png'; a.href = c.toDataURL('image/png'); a.click();
+};
+</script>
+</body>
+</html>

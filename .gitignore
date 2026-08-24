@@ -1,0 +1,71 @@
+# --- secrets (NEVER commit) ---
+.env
+.env.*
+*.key
+.pexels_key
+.elevenlabs_key
+*secret*
+*credential*
+*token*
+*.pem
+*.json
+
+# --- generated media (7.6GB, do not push) ---
+*.mp4
+*.mov
+*.webm
+*.mkv
+*.avi
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.webp
+*.ass
+*.srt
+
+# --- build/data artifacts ---
+*.zip
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+.DS_Store
+episode/
+ep2/episode/
+shorts_*/
+shorts/
+prototypes/
+output/
+data/
+
+# --- more secrets (any *_key file) ---
+*_key
+.meshy_key
+
+# --- 3D assets + model binaries ---
+*.glb
+*.gltf
+*.blend
+*.blend1
+*.fbx
+*.obj
+*.stl
+*.bin
+*.onnx
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+
+# --- compiled binaries ---
+build/
+dist/
+*.exe
+*.out
