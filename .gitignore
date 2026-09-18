@@ -69,3 +69,4 @@ build/
 dist/
 *.exe
 *.out
+.fal_key
