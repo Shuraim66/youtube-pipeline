@@ -32,15 +32,11 @@ export const TycoonImg: React.FC<{
   );
 };
 
-// ---------- persistent brand UI (on every scene) ----------
+// ---------- persistent brand UI (on every scene) — REAL Aurelis emblem (gold laurel + A) ----------
 export const BrandMark: React.FC = () => (
-  <div style={{position:'absolute', top:44, left:44, display:'flex', alignItems:'center', gap:12, zIndex:20}}>
-    <svg width={44} height={44} viewBox="0 0 40 40">
-      <path d="M20 4 L24.5 14.5 L35 14.5 L26.5 21.5 L29.5 33 L20 26 L10.5 33 L13.5 21.5 L5 14.5 L15.5 14.5 Z"
-            fill="none" stroke={C.gold} strokeWidth={1.5}/>
-      <text x="20" y="25" textAnchor="middle" fontFamily={FONT_SERIF} fontSize={15} fill={C.gold}>A</text>
-    </svg>
-    <span style={{fontFamily:FONT_SERIF, fontSize:26, color:C.gold, letterSpacing:0.5}}>Aurelis</span>
+  <div style={{position:'absolute', top:40, left:44, display:'flex', alignItems:'center', gap:14, zIndex:20}}>
+    <img src={staticFile('emblem.png')} width={56} height={56} style={{display:'block'}}/>
+    <span style={{fontFamily:FONT_SERIF, fontSize:30, color:C.gold, letterSpacing:0.5}}>Aurelis</span>
   </div>
 );
 
@@ -86,6 +82,69 @@ export const Hook: React.FC<{a:string; b:string; gold?:string}> = ({a, b}) => {
       <div style={{fontFamily:FONT_SERIF, fontWeight:600, fontSize:66, lineHeight:1.04,
                    color:C.ivory, textShadow:'0 3px 16px rgba(0,0,0,.6)'}}
            dangerouslySetInnerHTML={{__html:`${a}<br/><span style="color:${C.gold}">${b}</span>`}}/>
+    </div>
+  );
+};
+
+// ---------- DATA CARD (monetization-safety: original rendered numbers = "not mass-produced") ----------
+// A premium dark-gold card with a big GOLD figure + label + optional sub. Counts up on entry.
+// This is OUR own graphic with REAL cited numbers — the clearest human-value / non-slop signal.
+export const DataCard: React.FC<{big:string; label:string; sub?:string; prefix?:string; suffix?:string}> =
+({big, label, sub, prefix='', suffix=''}) => {
+  const f = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const enter = spring({frame:f, fps, config:{damping:18}});
+  // count-up if `big` is a plain number; else show as-is
+  const num = parseFloat(big.replace(/[^0-9.]/g,''));
+  const isNum = !isNaN(num) && /^[$£€]?[0-9.,]+[BMK%]?$/.test(big.trim());
+  let shown = big;
+  if (isNum){
+    const cur = num * enter;
+    const dec = big.includes('.') ? 1 : 0;
+    shown = prefix + cur.toLocaleString(undefined,{minimumFractionDigits:dec,maximumFractionDigits:dec}) + suffix
+            + (big.match(/[BMK%]$/)?big.match(/[BMK%]$/)![0]:'');
+  }
+  const cw=820, ch=560, cx=(1080-cw)/2, cy=(1920-ch)/2 - 60;
+  const rise = interpolate(enter,[0,1],[40,0]);
+  return (
+    <div style={{position:'absolute', left:cx, top:cy+rise, width:cw, height:ch, opacity:enter, zIndex:9}}>
+      <svg width={cw} height={ch} viewBox={`0 0 ${cw} ${ch}`}>
+        <defs>
+          <linearGradient id="cardg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#141a26"/><stop offset="1" stopColor="#0b0e13"/>
+          </linearGradient>
+        </defs>
+        <rect x={4} y={4} width={cw-8} height={ch-8} rx={28} fill="url(#cardg)"
+              stroke={C.goldDk} strokeWidth={2}/>
+        <rect x={22} y={22} width={cw-44} height={ch-44} rx={18} fill="none"
+              stroke="#243040" strokeWidth={1.5}/>
+      </svg>
+      <div style={{position:'absolute', inset:0, display:'flex', flexDirection:'column',
+        alignItems:'center', justifyContent:'center', gap:18, padding:'0 48px'}}>
+        <div style={{fontFamily:FONT_SERIF, fontWeight:600, fontSize:150, lineHeight:1,
+          color:C.gold, letterSpacing:-1, fontVariantNumeric:'tabular-nums'}}>{shown}</div>
+        <div style={{width:120, height:3, background:C.gold, opacity:0.8}}/>
+        <div style={{fontFamily:FONT_SANS, fontWeight:700, fontSize:38, letterSpacing:1,
+          textTransform:'uppercase', color:C.ivory, textAlign:'center'}}>{label}</div>
+        {sub && <div style={{fontFamily:FONT_SANS, fontSize:26, color:C.muted ?? '#9aa3b0',
+          textAlign:'center', lineHeight:1.4}}>{sub}</div>}
+      </div>
+    </div>
+  );
+};
+
+// ---------- SOURCE TAG (monetization-safety: visible citation nobody else bothers with) ----------
+export const SourceTag: React.FC<{text:string}> = ({text}) => {
+  const f = useCurrentFrame();
+  const o = interpolate(f, [4,14], [0,1], {extrapolateLeft:'clamp', extrapolateRight:'clamp'});
+  return (
+    <div style={{position:'absolute', left:54, bottom:230, opacity:o, zIndex:19,
+      display:'flex', alignItems:'center', gap:12,
+      background:'rgba(11,14,19,.72)', padding:'8px 16px 8px 12px', borderRadius:10}}>
+      <div style={{width:5, height:26, background:C.gold, borderRadius:3}}/>
+      <span style={{fontFamily:FONT_SANS, fontSize:24, color:'#d6d2ca', letterSpacing:0.3}}>
+        Source: {text}
+      </span>
     </div>
   );
 };
@@ -259,5 +318,157 @@ export const Tycoon: React.FC<{x:number; y:number; scale?:number; arm?:Pose; lea
             transform={`translate(0,${breathe})`}/>
       <circle cx={0} cy={-125} r={4} fill={C.gold} transform={`translate(0,${breathe})`}/>
     </g>
+  );
+};
+
+// ============================================================================
+// SCRIPT-DRIVEN METAPHOR COMPONENTS (Rothschild + reusable for future scripts)
+// ============================================================================
+
+// ---------- EUROPE MAP: 5 cities light up + connecting network ----------
+// Stylized (not geographic-accurate) — dots at rough relative positions, lines connect.
+const CITIES: {name:string; x:number; y:number}[] = [
+  {name:'Frankfurt', x:545, y:560},
+  {name:'London',    x:380, y:430},
+  {name:'Paris',     x:430, y:640},
+  {name:'Vienna',    x:690, y:600},
+  {name:'Naples',    x:610, y:830},
+];
+export const EuropeMap: React.FC<{lit?:number; showNames?:boolean}> = ({lit=5, showNames=false}) => {
+  const f = useCurrentFrame();
+  return (
+    <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{position:'absolute', inset:0}}>
+      {/* faint continent blob */}
+      <path d="M300 380 Q520 300 760 420 Q860 560 780 760 Q640 940 470 880 Q300 820 300 620 Z"
+            fill="#131a26" stroke="#223047" strokeWidth={2}/>
+      {/* connecting lines between lit cities (drawn progressively) */}
+      {CITIES.slice(0,lit).map((c,i)=> CITIES.slice(0,lit).map((d,j)=> j>i ? (
+        <line key={`${i}-${j}`} x1={c.x} y1={c.y} x2={d.x} y2={d.y}
+              stroke={C.gold} strokeWidth={1.4} opacity={0.28}/>
+      ) : null))}
+      {/* city dots */}
+      {CITIES.map((c,i)=>{
+        const on = i < lit;
+        const pulse = on ? 1 + Math.sin(f/10 + i)*0.12 : 0.6;
+        return (
+          <g key={c.name} opacity={on?1:0.25}>
+            <circle cx={c.x} cy={c.y} r={on? 16*pulse : 9} fill={C.gold}/>
+            {on && <circle cx={c.x} cy={c.y} r={26} fill="none" stroke={C.gold} strokeWidth={1.5} opacity={0.4}/>}
+            {(showNames && on) && (
+              <text x={c.x} y={c.y-32} textAnchor="middle" fontFamily={FONT_SANS}
+                    fontSize={26} fontWeight={700} fill={C.ivory}>{c.name}</text>
+            )}
+          </g>
+        );
+      })}
+    </svg>
+  );
+};
+
+// ---------- LEDGER: parchment page, lines write on (quill), for the 1875 Suez transaction ----------
+export const Ledger: React.FC<{lines:string[]; stamp?:string}> = ({lines, stamp}) => {
+  const f = useCurrentFrame();
+  const px=180, pw=720, py=560, ph=820;
+  return (
+    <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{position:'absolute', inset:0}}>
+      <rect x={px} y={py} width={pw} height={ph} rx={10} fill="#efe6cf" stroke="#c9bd9c" strokeWidth={3}/>
+      <rect x={px} y={py} width={pw} height={ph} rx={10} fill="none" stroke="#d8cdaf" strokeWidth={1}/>
+      {/* ruled lines */}
+      {lines.map((_,i)=>(
+        <line key={'r'+i} x1={px+50} y1={py+120+i*100} x2={px+pw-50} y2={py+120+i*100}
+              stroke="#cbbf9e" strokeWidth={1}/>
+      ))}
+      {/* header */}
+      <text x={px+pw/2} y={py+64} textAnchor="middle" fontFamily={FONT_SERIF} fontSize={34}
+            fontWeight={600} fill="#5a4a2a">N M ROTHSCHILD &amp; SONS · 1875</text>
+      <line x1={px+50} y1={py+88} x2={px+pw-50} y2={py+88} stroke="#8a7a52" strokeWidth={2}/>
+      {/* entries write on, one per ~14 frames */}
+      {lines.map((ln,i)=>{
+        const start = 10 + i*16;
+        const on = interpolate(f, [start, start+12], [0,1], {extrapolateLeft:'clamp', extrapolateRight:'clamp'});
+        return (
+          <g key={i} opacity={on} clipPath="none">
+            <text x={px+60} y={py+112+i*100} fontFamily={FONT_SERIF} fontSize={40} fill="#3a2f18"
+                  style={{}}>{ln}</text>
+          </g>
+        );
+      })}
+      {stamp && (() => {
+        const s = interpolate(f, [10+lines.length*16, 10+lines.length*16+12], [0,1], {extrapolateLeft:'clamp', extrapolateRight:'clamp'});
+        return (
+          <g opacity={s} transform={`rotate(-12 ${px+pw-160} ${py+ph-120})`}>
+            <rect x={px+pw-300} y={py+ph-170} width={240} height={90} rx={8}
+                  fill="none" stroke={C.ox} strokeWidth={5}/>
+            <text x={px+pw-180} y={py+ph-108} textAnchor="middle" fontFamily={FONT_SERIF}
+                  fontSize={40} fontWeight={600} fill={C.ox}>{stamp}</text>
+          </g>
+        );
+      })()}
+    </svg>
+  );
+};
+
+// ---------- SPLIT SCREEN: LEFT (old) vs RIGHT (new), weight shifts over time ----------
+export const SplitScreen: React.FC<{
+  leftLabel:string; rightLabel:string; shift?:number;  // 0 = balanced, 1 = right dominant
+  leftIcon?:React.ReactNode; rightIcon?:React.ReactNode;
+}> = ({leftLabel, rightLabel, shift=0, leftIcon, rightIcon}) => {
+  const leftO = interpolate(shift, [0,1], [1, 0.35]);
+  const rightO = interpolate(shift, [0,1], [0.5, 1]);
+  return (
+    <div style={{position:'absolute', inset:0, display:'flex'}}>
+      <div style={{flex:1, background:'#141017', opacity:leftO, position:'relative',
+        display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:24}}>
+        {leftIcon}
+        <div style={{fontFamily:FONT_SANS, fontWeight:700, fontSize:34, color:C.ivory,
+          textTransform:'uppercase', letterSpacing:1, textAlign:'center', padding:'0 30px'}}>{leftLabel}</div>
+      </div>
+      <div style={{width:4, background:C.gold, opacity:0.5}}/>
+      <div style={{flex:1, background:'#0c1420', opacity:rightO, position:'relative',
+        display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:24}}>
+        {rightIcon}
+        <div style={{fontFamily:FONT_SANS, fontWeight:700, fontSize:34, color:C.gold,
+          textTransform:'uppercase', letterSpacing:1, textAlign:'center', padding:'0 30px'}}>{rightLabel}</div>
+      </div>
+    </div>
+  );
+};
+
+// ---------- VENN INSIGHT: two labeled circles + pulsing overlap (the thesis) ----------
+export const VennInsight: React.FC<{leftLabel:string; rightLabel:string; centerLabel?:string}> =
+({leftLabel, rightLabel, centerLabel}) => {
+  const f = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const draw = spring({frame:f, fps, config:{damping:20}});
+  // circles closer together -> bigger, clearer overlap lens
+  const r=240, cy=850, lx=445, rx=635;
+  const circ = 2*Math.PI*r;
+  const pulse = 0.5 + Math.abs(Math.sin(f/14))*0.5;
+  const half = (rx-lx)/2;                 // half the center gap
+  const lensRx = r - half;                // horizontal half-width of the overlap lens
+  return (
+    <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{position:'absolute', inset:0}}>
+      {/* overlap highlight (matches the true lens width) */}
+      <ellipse cx={540} cy={cy} rx={lensRx} ry={r*0.82} fill={C.gold} opacity={0.12*pulse}/>
+      {/* circles draw on */}
+      <circle cx={lx} cy={cy} r={r} fill="none" stroke="#5b8bd0" strokeWidth={5}
+              strokeDasharray={circ} strokeDashoffset={circ*(1-draw)} />
+      <circle cx={rx} cy={cy} r={r} fill="none" stroke={C.gold} strokeWidth={5}
+              strokeDasharray={circ} strokeDashoffset={circ*(1-draw)} />
+      {/* side labels sit clear of the circles */}
+      <text x={lx-120} y={cy-r-30} textAnchor="middle" fontFamily={FONT_SANS} fontWeight={700}
+            fontSize={38} fill="#8fb4e6">{leftLabel}</text>
+      <text x={rx+120} y={cy-r-30} textAnchor="middle" fontFamily={FONT_SANS} fontWeight={700}
+            fontSize={38} fill={C.gold}>{rightLabel}</text>
+      {/* center label BELOW the circles (full width available) with a tick line up to the overlap */}
+      {centerLabel && (
+        <g opacity={draw}>
+          <line x1={540} y1={cy} x2={540} y2={cy+r+70} stroke={C.gold} strokeWidth={2} opacity={0.5}/>
+          <circle cx={540} cy={cy} r={6} fill={C.gold}/>
+          <text x={540} y={cy+r+120} textAnchor="middle" fontFamily={FONT_SERIF} fontWeight={600}
+                fontSize={54} fill={C.ivory}>{centerLabel}</text>
+        </g>
+      )}
+    </svg>
   );
 };

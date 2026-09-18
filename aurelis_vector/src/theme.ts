@@ -15,6 +15,7 @@ export const C = {
   ink:    '#1a2536',
   char:   '#233043',
   skin:   '#ecdcba',
+  muted:  '#9aa3b0',
 } as const;
 
 export const FONT_SERIF = "'Fraunces', Georgia, serif";

@@ -1,5 +1,5 @@
 [
-  {"scene":"peak",     "vo":"He built an empire worth billions, from absolutely nothing.", "hook":["He built an empire","from nothing."], "caption_pop":"billions"},
-  {"scene":"mistake",  "vo":"Then he made one catastrophic decision that changed everything.", "hook":["One bad","decision."], "caption_pop":"one decision"},
-  {"scene":"collapse", "vo":"And in a matter of weeks, the entire fortune vanished.", "hook":["Then it all","vanished."], "caption_pop":"vanished"}
+  {"scene":"peak", "vo":"In twenty nineteen, this company was valued at forty seven billion dollars.", "hook":["Worth $47 billion.","The hottest startup."], "source":"WeWork S-1 filing, 2019"},
+  {"scene":"stat", "vo":"But it was losing over one point six billion dollars every single year.", "data":{"big":"1.6","prefix":"$","suffix":"B","label":"Lost Every Year","sub":"Net loss, 2018"}, "source":"WeWork S-1 filing, 2019"},
+  {"scene":"collapse", "vo":"And within six weeks, the valuation collapsed to just eight billion.", "hook":["Then it all","collapsed."], "source":"Reuters, Oct 2019"}
 ]

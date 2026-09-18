@@ -3,7 +3,8 @@
 import React from 'react';
 import {AbsoluteFill, Sequence, useCurrentFrame, interpolate, useVideoConfig} from 'remotion';
 import {C, FONT_SERIF, FONT_SANS, W, H} from './theme';
-import {BrandMark, ProgressRing, Hook, NavyBG, Coin, Tower, TycoonImg, Wipe} from './components';
+import {BrandMark, ProgressRing, Hook, NavyBG, Coin, Tower, TycoonImg, Wipe, DataCard, SourceTag,
+        EuropeMap, Ledger, SplitScreen, VennInsight} from './components';
 import timing from './timing.json';
 
 // ---- individual scene renderers (the library; keyed by beat.scene) ----
@@ -62,7 +63,88 @@ const SunBurst: React.FC<{cx:number; cy:number}> = ({cx, cy}) => {
   })}</g>;
 };
 
-const SCENES: Record<string, React.FC<{hook:string[]}>> = {peak:Peak, mistake:Mistake, collapse:Collapse};
+// ---- Rothschild / general metaphor scenes (data-driven per beat) ----
+const MapScene: React.FC<{hook:string[]; data?:any}> = ({hook, data}) => (
+  <AbsoluteFill>
+    <NavyBG glow={false}/>
+    <EuropeMap lit={data?.lit ?? 5} showNames={!!data?.names}/>
+    {data?.title && <Hook a={hook?.[0] ?? ''} b={hook?.[1] ?? ''}/>}
+  </AbsoluteFill>
+);
+
+const LedgerScene: React.FC<{hook:string[]; data?:any}> = ({data}) => (
+  <AbsoluteFill>
+    <NavyBG glow={false}/>
+    <Ledger lines={data?.lines ?? []} stamp={data?.stamp}/>
+  </AbsoluteFill>
+);
+
+// simple flat-vector icons for the split-screen halves
+const BankIcon = (
+  <svg width={260} height={200} viewBox="0 0 260 200">
+    <polygon points="130,20 250,80 10,80" fill={C.ivory}/>
+    <rect x={20} y={80} width={220} height={14} fill={C.gold}/>
+    {[40,90,140,190].map(x=><rect key={x} x={x} y={98} width={24} height={80} fill={C.ivory}/>)}
+    <rect x={10} y={182} width={240} height={16} fill={C.gold}/>
+    <circle cx={130} cy={52} r={10} fill={C.gold}/>
+  </svg>
+);
+const MarketIcon = (
+  <svg width={260} height={200} viewBox="0 0 260 200">
+    <rect x={10} y={10} width={240} height={160} rx={10} fill="none" stroke={C.gold} strokeWidth={4}/>
+    {/* rising line chart */}
+    <polyline points="30,150 80,120 120,135 170,70 230,40" fill="none" stroke={C.gold} strokeWidth={6} strokeLinecap="round" strokeLinejoin="round"/>
+    {[
+      [80,120],[170,70],[230,40]
+    ].map(([x,y],i)=><circle key={i} cx={x} cy={y} r={7} fill={C.goldLt}/>)}
+    <polygon points="230,40 222,54 238,54" fill={C.goldLt}/>
+  </svg>
+);
+const SplitScene: React.FC<{hook:string[]; data?:any}> = ({data}) => (
+  <AbsoluteFill>
+    <SplitScreen leftLabel={data?.left ?? ''} rightLabel={data?.right ?? ''} shift={data?.shift ?? 0}
+                 leftIcon={BankIcon} rightIcon={MarketIcon}/>
+  </AbsoluteFill>
+);
+
+const VennScene: React.FC<{hook:string[]; data?:any}> = ({data}) => (
+  <AbsoluteFill>
+    <NavyBG glow={false}/>
+    <VennInsight leftLabel={data?.left ?? 'BUILDS'} rightLabel={data?.right ?? 'SUSTAINS'}
+                 centerLabel={data?.center}/>
+  </AbsoluteFill>
+);
+
+// CTA / brand outro
+const CtaScene: React.FC<{hook:string[]; data?:any}> = ({data}) => (
+  <AbsoluteFill style={{background:C.navy}}>
+    <NavyBG/>
+    <div style={{position:'absolute', inset:0, display:'flex', flexDirection:'column',
+      alignItems:'center', justifyContent:'center', gap:30}}>
+      <div style={{fontFamily:FONT_SERIF, fontSize:76, fontWeight:600, color:C.ivory, textAlign:'center'}}>
+        {data?.series ?? 'How Empires Die'}
+      </div>
+      <div style={{width:140, height:3, background:C.gold}}/>
+      <div style={{fontFamily:FONT_SANS, fontSize:34, color:'#9aa3b0', letterSpacing:1}}>
+        {data?.cta ?? 'Follow for more'}
+      </div>
+    </div>
+  </AbsoluteFill>
+);
+
+// STAT scene — full-frame DATA CARD (monetization-safety: original cited number).
+// Beat props: big, label, sub?, prefix?, suffix?  (e.g. big:"47", prefix:"$", suffix:"B")
+const Stat: React.FC<{hook:string[]; data?:any}> = ({data}) => (
+  <AbsoluteFill>
+    <NavyBG glow={false}/>
+    <DataCard big={data?.big ?? '0'} label={data?.label ?? ''} sub={data?.sub}
+              prefix={data?.prefix} suffix={data?.suffix}/>
+  </AbsoluteFill>
+);
+
+const SCENES: Record<string, React.FC<{hook:string[]; data?:any}>> =
+  {peak:Peak, mistake:Mistake, collapse:Collapse, stat:Stat,
+   map:MapScene, ledger:LedgerScene, split:SplitScene, venn:VennScene, cta:CtaScene};
 
 // ---- word-synced karaoke caption (reads timing.captions, ~3 words visible) ----
 const Captions: React.FC = () => {
@@ -100,7 +182,9 @@ export const ScriptScene: React.FC = () => {
         const dur = b.endFrame - b.startFrame;
         return (
           <Sequence key={i} from={b.startFrame} durationInFrames={Math.max(1,dur)}>
-            <Comp hook={b.hook ?? ['','']}/>
+            <Comp hook={b.hook ?? ['','']} data={b.data}/>
+            {/* per-beat source citation (monetization-safety) — beat has "source":"<citation>" */}
+            {b.source && <SourceTag text={b.source}/>}
           </Sequence>
         );
       })}
@@ -113,7 +197,7 @@ export const ScriptScene: React.FC = () => {
       ))}
       <Captions/>
       <BrandMark/>
-      <ProgressRing n="7" pct={0.47}/>
+      {/* ProgressRing removed — it was an Alux list-counter ("#8 of 15"); meaningless for narrative videos */}
     </AbsoluteFill>
   );
 };

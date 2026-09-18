@@ -1,0 +1,10 @@
+[
+  {"scene":"map", "vo":"The Rothschilds dominated nineteenth century finance like no family before them.", "hook":["The Rothschilds","ruled finance."], "data":{"lit":1,"title":true}},
+  {"scene":"map", "vo":"By the eighteen twenties, five brothers ran banks across five cities: Frankfurt, London, Paris, Vienna, and Naples.", "data":{"lit":5,"names":true}, "source":"The Rothschild Archive"},
+  {"scene":"stat", "vo":"It wasn't just family banking. It was a private network for moving money and trust across every border in Europe.", "data":{"big":"5","label":"Cities, One Dynasty","sub":"A private network by the 1820s"}, "source":"The Rothschild Archive"},
+  {"scene":"ledger", "vo":"In eighteen seventy five, their London bank lent the British government four million pounds to buy Egypt's Suez Canal shares.", "data":{"lines":["Advanced to:  British Govt","Amount:  £4,000,000","For:  Suez Canal shares"],"stamp":"PAID"}, "source":"The Rothschild Archive, 1875"},
+  {"scene":"split", "vo":"But the financial world changed. Joint-stock banks expanded, and public capital markets deepened.", "hook":["The system","changed."], "data":{"left":"Private Bank","right":"Public Markets","shift":0.85}},
+  {"scene":"venn", "vo":"And here's the timeless truth: the advantage that builds an empire is rarely the advantage that sustains it.", "data":{"left":"BUILDS","right":"SUSTAINS","center":"rarely the same"}},
+  {"scene":"collapse", "vo":"Their private network dominated an era, until the system evolved past it. Power is temporary, unless you adapt.", "hook":["Adapt,","or fade."]},
+  {"scene":"cta", "vo":"How Empires Die. Follow for more stories of rise, evolution, and legacy.", "data":{"series":"How Empires Die","cta":"Follow for more"}}
+]

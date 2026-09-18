@@ -2,12 +2,24 @@
 
 > **For any new session: READ THIS FILE FIRST for full context, then UPDATE it at the end of significant work** (new uploads, new builders, recipe changes, status). Keep it current — it is the single source of truth that carries context across chats. Never put raw API keys/secrets in here (reference the key *files* instead).
 
-Last updated: 2026-09-16
+Last updated: 2026-09-18
+
+---
+
+## ⭐ MAJOR PIVOT (Sep 18 2026) — AURELIS IS NOW FLAT-VECTOR ANIMATION (read `~/.claude/.../memory/alux-visual-reference.md` for full detail)
+**Aurelis pivoted from the photoreal ffmpeg pipeline to a flat-vector animated engine (Alux-style: blue-figure-equivalent + coins/tower metaphors + dark+gold editorial).** Key decisions this session:
+- **Alux = FLAT 2D VECTOR ANIMATION** (not photoreal) — earlier notes saying "we are NOT cloning that / Aurelis = photoreal editorial" are REVERSED. User wants the actual Alux flat-vector look, custom character, "same bar or better".
+- **NEW ENGINE: `aurelis_vector/`** — a Remotion project (React→MP4, headless Chrome + ffmpeg, **NO GPU, local, free**). `build.py <script_id>` reads `scripts/<id>.json` → Kokoro VO (`kokoro_align.py`, bf_emma) → timing.json → renders `ScriptScene` → muxes audio → `out/<id>.mp4`. Scene library in `src/components.tsx` (BrandMark, ProgressRing, Caption, Hook, Coin, Tower, TycoonImg, Wipe transitions). Proven end-to-end (`out/demo.mp4`, 3-beat "How Empires Die" arc, narrated, Alux-tier).
+- **CHARACTER: `TycoonImg`** = AI flat-vector businessman generated on **fal.ai/FLUX** (commercial-licensed; key at `.fal_key`, gitignored). 4-pose library (neutral/triumph/despair/point) at `character/poses/*.jpg` → bg-removed `public/poses/*.png`. Endpoint `POST https://fal.run/fal-ai/flux/dev`. Add more poses via fal (seed 778001 + same char desc).
+- **RUNPOD / WAN / FLUX-on-GPU: FULLY OBSOLETE for Aurelis.** Pod + volume TERMINATED. §9e/§9f WAN plan below is DEAD for Aurelis (kept for history). Flat-vector needs no GPU.
+- **ENGINE LICENSE:** Remotion is paid for teams(4+)/commercial; fine while user is SOLO. Migrate to free headless-Chrome+ffmpeg if a team forms (identical quality — Remotion IS that under the hood).
+- **Photoreal builders (`build_*.py`, `gen_*.py`) = LEGACY** (made the currently-live videos; kept as reference). Night File NOT decided — may stay photoreal; user will spec separately.
+- **All work committed + pushed to git (Sep 18)** — commit cd7d5f1, origin github.com/Shuraim66/youtube-pipeline.
 
 ---
 
 ## 1. What this project is
-Faceless, automated YouTube Shorts (+ TikTok/IG/FB Reels) operation. **Two live channels**, both built with the same ffmpeg engine (hook-first, phrase-matched visuals, karaoke captions, ElevenLabs VO, loop tail). Goal: retention-optimized shorts → algorithmic breakout → monetization. Mostly free tools.
+Faceless, automated YouTube Shorts (+ TikTok/IG/FB Reels) operation. **Two live channels** (legacy photoreal builders + the NEW Aurelis flat-vector engine — see PIVOT banner). VO = **Kokoro (local, free)** — ElevenLabs RETIRED (see §4). Goal: retention-optimized shorts → algorithmic breakout → monetization. Mostly free tools.
 
 ### Channel A — **Aurelis** (wealth / history / business)
 Niche: "quiet wealth" + rise-and-fall history + business-collapse stories. Energetic **female** narrator (ElevenLabs Alice), **GOLD** word-pop captions, warm cinematic grade.
@@ -58,7 +70,8 @@ Base builders: `build_blockbuster.py` (Aurelis/gold) and `build_hinterkaifeck.py
 ---
 
 ## 4. Voices, music, keys
-- **ElevenLabs** (key file `.elevenlabs_key`, gitignored; current key is a scoped one that works for TTS but not quota-read). Endpoint: `/v1/text-to-speech/{voice}/with-timestamps` (need the char timestamps for karaoke captions), model `eleven_multilingual_v2`.
+- **⭐ PRIMARY VOICE = KOKORO (local, free, no GPU) — this is the current standard.** Helper `kokoro_align.py` → `vo.mp3` + `vo.json` (ElevenLabs alignment format, so caption/timing code is unchanged). Aurelis `bf_emma` (lang `b`), Night File `am_michael` (lang `a`). Installed in the whop-clipper venv (`pip install kokoro soundfile`, CPU-OK). **The vector engine (`aurelis_vector/build.py`) and the legacy builders both use Kokoro.**
+- **ElevenLabs — RETIRED (legacy, kept for reference only):** key file `.elevenlabs_key`, gitignored. Endpoint: `/v1/text-to-speech/{voice}/with-timestamps`, model `eleven_multilingual_v2`.
   - Aurelis voice: **Alice** `Xb7hH8MSUJpSbSDYk0k2`, speed 1.05, style 0.55, stability 0.38 (energetic).
   - Night File voice: **Daniel** `onwK4e9ZLuTAKqWW03F9`, speed 0.97, style 0.22, stability 0.5 (deep, ominous). Other deep options that work: Bill `pqHfZKP75CvOlQylNhV4`, George `JBFqnCBsd6RMkjVDRZzb`, Brian `nPczCjzI2devNBz1zQrb`.
   - Quota gotcha: pay-as-you-go accounts run out (10k char cap). If 401/quota, user must top up or swap key in `.elevenlabs_key`.
@@ -85,9 +98,15 @@ Script: `upload_yt.py` (manifest-driven, resume-safe, skips entries already mark
 ---
 
 ## 6. Sandbox reachability (tested)
+### YouTube reference downloads (verified Sep 18, 2026)
+- The older workaround is recorded in `~/.claude/projects/-home-alpha-products-whop-clipper/memory/youtube-sabr-hd-download.md`: `--extractor-args "youtube:player_client=tv_embedded"`, without cookies or `player_skip=configs`.
+- **yt-dlp 2026.07.04 now reports `tv_embedded` unsupported.** On Alux reference `pMoCzfIlT8o`, that option fell back to **android_vr**; selecting 720p H.264 + M4A (formats 136+140) successfully downloaded and merged the full video after an earlier automatic 480p video selection returned HTTP 403. This does not establish the precise cause of the earlier 403.
+- Equivalent command using the client actually selected: `yt-dlp --extractor-args 'youtube:player_client=android_vr' --no-playlist -f 'bv*[vcodec^=avc1][height<=720]+ba[ext=m4a]/b[height<=720]' --merge-output-format mp4 -o '/tmp/alux-reference/%(id)s.%(ext)s' 'https://www.youtube.com/watch?v=pMoCzfIlT8o'`. The successful invocation used the old `tv_embedded` option and its logged Android VR fallback; explicit `android_vr` was not separately retested.
+- Reference copy: `/tmp/alux-reference/pMoCzfIlT8o.mp4` (temporary). Network sandbox DNS failures require an approved network-enabled command; they are separate from YouTube HTTP 403 responses.
+
 CAN reach: pexels, api.elevenlabs.io, image.pollinations.ai, **upload**.wikimedia.org, archive.org, oauth2/youtube.googleapis.com, fal.run, together.
 CANNOT reach: **commons**.wikimedia.org (use the MD5 upload.wikimedia.org trick), huggingface, Google Flow/Veo/Kling generation UIs.
-Local free TTS present (piper `en_US-ryan-high/amy/hfc_male` .onnx in `~/piper-voices`, faster_whisper in the venv) — fallback only; ElevenLabs is the standard.
+TTS = **Kokoro is now the STANDARD/PRIMARY** (local, free, via `kokoro_align.py`; bf_emma=Aurelis, am_michael=Night File). ElevenLabs RETIRED (§4). Piper (`en_US-ryan-high/amy/hfc_male` .onnx in `~/piper-voices`) + faster_whisper remain as extra local fallbacks.
 
 ---
 
@@ -153,7 +172,7 @@ Direction locked = **C hybrid** (editorial base + brand identity). WORKFLOW: gen
 - **EMBLEM:** Aurelis brand mark = gold laurel + serif "A" (FLUX-generated `emblem_options/emblem1.jpg`, refined to transparent `assets/emblem.png` + `assets/emblem_watermark.png`). Overlaid top-right (`overlay=W-w-40:44`, alpha 0.55, 104px) in the Aurelis final ffmpeg (input [9], EMBLEM var). Night File gets NO Aurelis emblem (wrong brand — needs its own blood-red mark, TODO).
 - **BUILT (NOT uploaded, awaiting user review Sep 16):** `prototypes/short_wework.mp4` (~30s, WeWork, cards $47B/$1.9B) + `prototypes/short_bella.mp4` (~30s, Bella in the Wych Elm, case card). Both verified: cards fit, no overlay collision, emblem on Aurelis.
 - **WAN/LTX I2V (deferred phase 2):** image-to-video micro-motion (1-1.5s subtle motion on FLUX stills, NOT text-to-video) is the Alux-tier polish layer — legit & non-slop per user research, but heavy; do AFTER this pipeline proves out. Motion today = Ken Burns on stills + real Pexels video.
-- **ALUX STYLE NOTE:** Alux's actual identity is FLAT 2D VECTOR ANIMATION with a blue crowned mascot (not photoreal) — we are NOT cloning that; Aurelis identity = dark+gold cinematic editorial + emblem + data cards (substance-forward, our own lane).
+- **ALUX STYLE NOTE — ⚠️ SUPERSEDED Sep 18 (see PIVOT banner at top):** this old note said "we are NOT cloning Alux's flat vector; Aurelis = photoreal editorial." REVERSED — Aurelis IS now flat-vector (aurelis_vector/ Remotion engine). Kept for history only.
 - **LIVE SHORTS HAVE THE OLD CARD BUG:** Mansa Musa / Toys R Us / Yuba County / Elisa Lam / Max Headroom (already published) have card text overflow + punch-on-card. User said SKIP fixing them.
 
 ## 9g. Sep 16 batch 2 — 4 more shorts on the pipeline + Night File emblem
@@ -177,6 +196,7 @@ Direction locked = **C hybrid** (editorial base + brand identity). WORKFLOW: gen
 - **Image-source option (open):** user wants no watermark + better quality. Best free path = **Together.ai FLUX.1-schnell-Free** (needs a free Together API key from the user; hosts together/fal/stability are reachable but all need keys — none on disk). If user provides a Together key, switch gen_*.py from Pollinations to Together FLUX (clean, no watermark). New builds: target ~30s.
 
 ## 10. Current status / open TODOs
+- **⭐ ACTIVE WORK (Sep 18 2026) = the flat-vector engine (`aurelis_vector/`, see PIVOT banner at top).** Aurelis STATUS: engine built + proven (narrated demo renders, Alux-tier character with 4-pose library, captions/transitions/audio all working, bg cleaned). **NEXT: write the first REAL "How Empires Die" script → `scripts/<id>.json`, build any new scene types it needs (data-chart card / map / rising-graph) on demand, render.** The items below are LEGACY (photoreal pipeline) — kept for reference / Night File, but Aurelis no longer uses them.
 - **MASS-PRODUCED-SAFETY UPGRADE (Sep 12 2026, per user "make content safer to survive the mass produced content review" + "can't do VO, upgrade the builders"):** added `vid:` real-Pexels-footage beat prefix to the two reference builders (`build_somerton_v2.py`, `build_morgan_v2.py`) so shorts mix real motion footage with AI stills instead of being 100% AI-image+AI-voice. User CANNOT do own VO (not native English) → keep ElevenLabs TTS, de-template via real footage + variety. Verified end-to-end (`build_viddemo.py` → real underwater footage + captions, 1080x1920). **Next: build actual Night File + Aurelis shorts using `vid:` beats and hold for user review before upload.** Also consider more template variation (caption position, opening styles).
 - **CORRECTION (Sep 12 2026):** user says **Night File retention is actually FINE** (earlier "~10%" reading was wrong) → KEEP Night File in the rotation, don't pause it. All 3 formats stay live.
 - **REDDIT-STORY = spinning up its own channel (Sep 12 2026):** it's the best performer (most views + first 3 subs). Gameplay/background monetization risk now SORTED (Pexels pool, see §NEW FORMAT). Plan agreed: get the clean bg base done [DONE], then create the dedicated "creepy/scary stories" channel + first batch of ~5, hold for review before upload. Channel does NOT yet exist — needs OAuth token like nightfile_token.json.
