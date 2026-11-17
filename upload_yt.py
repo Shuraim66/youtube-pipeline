@@ -17,12 +17,16 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 from googleapiclient.errors import HttpError
 
-SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
+SCOPES = ["https://www.googleapis.com/auth/youtube.upload",
+          # readonly lets us confirm WHICH channel a token uploads to before uploading
+          "https://www.googleapis.com/auth/youtube.readonly"]
 
 def get_service(secret, token_path):
     creds = None
     if os.path.exists(token_path):
         creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+        if not set(SCOPES) <= set(json.load(open(token_path)).get("scopes", [])):
+            creds = None  # old upload-only token: re-consent so the channel check works
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             try:
@@ -43,7 +47,7 @@ def upload_one(yt, e, dry):
             "title": e["title"],
             "description": e["description"],
             "tags": e.get("tags", []),
-            "categoryId": "24",  # Entertainment
+            "categoryId": str(e.get("categoryId", "24")),
         },
         "status": {
             "privacyStatus": e.get("privacyStatus", "private"),
@@ -55,13 +59,23 @@ def upload_one(yt, e, dry):
     if e.get("publishAt"):
         body["status"]["publishAt"] = e["publishAt"]
     if dry:
-        print(f"  [dry-run] would upload {os.path.basename(e['file'])} -> publish {e.get('publishAt','now')}")
+        target = f"schedule {e['publishAt']}" if e.get("publishAt") else e.get("privacyStatus", "private").upper()
+        print(f"  [dry-run] would upload {os.path.basename(e['file'])} -> {target}; category {e.get('categoryId', '24')}")
         return "DRYRUN"
     media = MediaFileUpload(e["file"], chunksize=-1, resumable=True, mimetype="video/mp4")
     req = yt.videos().insert(part="snippet,status", body=body, media_body=media)
     resp = None
     while resp is None:
         status, resp = req.next_chunk()
+    if e.get("thumbnail"):
+        try:
+            yt.thumbnails().set(videoId=resp["id"], media_body=MediaFileUpload(e["thumbnail"], mimetype="image/jpeg")).execute()
+            print("  thumbnail set")
+        except HttpError as err:
+            print(f"  thumbnail FAILED (set it in Studio): {err}", file=sys.stderr)
+    print("  inserted with privacy={} categoryId={}".format(
+        resp.get("status", {}).get("privacyStatus", "unknown"),
+        resp.get("snippet", {}).get("categoryId", "unknown")))
     return resp["id"]
 
 def main():
@@ -70,12 +84,19 @@ def main():
     ap.add_argument("--secret", required=True)
     ap.add_argument("--token", default=None)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--expect-channel", required=True,
+                    help="exact channel title the token must belong to (e.g. 'Aurelis HQ', 'The Night File'); aborts otherwise")
     ap.add_argument("--limit", type=int, default=0, help="upload at most N new clips (0 = all)")
     a = ap.parse_args()
     token_path = a.token or os.path.join(os.path.dirname(os.path.abspath(a.manifest)), "token.json")
 
     entries = json.load(open(a.manifest))
     yt = get_service(a.secret, token_path)
+    mine = yt.channels().list(part="snippet", mine=True).execute().get("items", [])
+    titles = [c["snippet"]["title"] for c in mine]
+    print(f"token {os.path.basename(token_path)} -> channel(s) {titles}")
+    if a.expect_channel not in titles:
+        sys.exit(f"ABORT: expected channel {a.expect_channel!r} but this token uploads to {titles}. Nothing uploaded.")
 
     done = 0
     for e in entries:
@@ -102,7 +123,7 @@ def main():
         if vid != "DRYRUN":
             e["uploaded"] = f"https://youtu.be/{vid}"
             json.dump(entries, open(a.manifest, "w"), indent=2)
-            when = f"scheduled {e['publishAt']}" if e.get("publishAt") else "PUBLIC now"
+            when = f"scheduled {e['publishAt']}" if e.get("publishAt") else e.get("privacyStatus", "private").upper()
             print(f"  done -> {e['uploaded']}  ({when})")
             done += 1
             time.sleep(2)

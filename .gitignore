@@ -70,3 +70,13 @@ dist/
 *.exe
 *.out
 .fal_key
+
+# Authored narration direction is source, not a generated cache or credential.
+!aurelis_vector/scripts/*.delivery.json
+aurelis_vector/work/
+aurelis_vector/out/
+
+# Blender test (downloads, frame sequence)
+blender_test/dl/
+blender_test/out/frames/
+blender_test/out/*.png

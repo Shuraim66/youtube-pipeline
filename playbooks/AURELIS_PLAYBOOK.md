@@ -1,4 +1,6 @@
 # Aurelis HQ — Shorts Optimization Playbook
+
+> **Status (2026-10-12):** historical reference. New Aurelis episodes follow [`V2_WORKFLOW.md`](./V2_WORKFLOW.md), which supersedes the ElevenLabs voice sections (Kokoro only) and any rule listed in its Precedence table.
 _Business / money / stealth-wealth Shorts (@aurelishq) + aurelispk.com storefront_
 _Last updated: 2026-09-10_
 

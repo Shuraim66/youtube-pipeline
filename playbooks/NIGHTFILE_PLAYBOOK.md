@@ -1,4 +1,6 @@
 # The Night File — Shorts Overhaul Playbook
+
+> **Status (2026-10-12):** historical reference. New Night File episodes follow [`V2_WORKFLOW.md`](./V2_WORKFLOW.md), which supersedes the ElevenLabs voice sections (Kokoro only) and any rule listed in its Precedence table.
 _Horror / mystery Shorts (@thenightfilehq)_
 _Last updated: 2026-09-10_
 
@@ -77,3 +79,41 @@ And most victims never find out... until they start hearing footsteps at night-
 - [ ] Audio loop: last sentence flows into sentence 1.
 - [ ] Length 30–45s.
 - [ ] CTA/question end card ("What would you do?" / "Who was in the attic?") to drive comments.
+
+## Hook rules (Sep 28 2026, from Studio data on Villisca / BlackBerry)
+- **Cold-open on the strangest physical detail** ("Every mirror in the house was covered."), THEN the setup. Studio: the bizarre clues drove completion (Villisca APV 68%); stayed-to-watch (29%) is the bottleneck.
+- Frame 0 fully composed (no fade) + **impact hit on frame 0** + a 10-frame 1.04→1.0 punch-in (built into `NightfileCaseFile`: `hitSfx`, `hookPunch`).
+- Vary the beat layouts per episode (`window | full | clock | count | checklist`).
+
+## Retention rules (Oct 2 2026 — from Studio data on Theranos / Quibi / Flannan / D.B. Cooper) — BOTH channels
+1. **Frame-0 hook text is HUGE in every format (≥110 px), high contrast.** Formats rotate layout, never hook size. (Quibi's 78 px typewriter hook → 16.4% stayed.)
+2. **Hook card sits in the caption slot, never over the scroll-stopping visual** (a face, the key object). Captions are hidden while it shows.
+3. **Every beat is a new strange detail.** Context/setup and stats go ON SCREEN under the voice; the voice never reads a stats line as its own beat (drop-offs hit at Theranos WSJ stats, Quibi subscriber numbers, Cooper checklist/map).
+4. **Comment prompt appears from mid-video**, not at the end (viewers leave ~50–55%). Pin the same question in Studio.
+5. **Loop line is a complete sentence** that also leads into the hook ("Neither was he." → "A man hijacked…"), never a dangling "that's how…". Aurelis non-stack formats dissolve the last 8 frames into the frame-0 hook; Night File loops are frame-identical.
+6. **A/B the opener**: alternate a question opener and a statement opener across episodes and compare stayed-to-watch. Vine = question, MH370 = statement.
+7. Prefer famous names + a concrete catastrophic outcome; keep runtime ~24–30 s.
+
+## STRATEGY RESET (Oct 3 2026) — out of "<500 views jail"
+Evidence: vidIQ channel analysis (own data) + 2026 creator guides (Reddit was not reachable from tooling).
+**Own data (strongest signal):** Aurelis Sep 9–15 person+money+reversal Shorts (Carnegie "Richest Man Alive Then Gave It All Away" 1,132; Vanderbilt; Toys R Us) = 432–1,132 views. Sep 22–Oct 1 company obituaries (Vine, Quibi, Atari, Theranos, Lehman, BlackBerry) = 25–214. Long-form = 2–3 views. 8 subs / 51 videos. The infographic engine got MORE polished while views fell → visuals weren't the lever, SUBJECT + opening frame were.
+Rules from now on (Aurelis; Night File where it applies):
+1. **Subject = one PERSON + money + one reversal** ("He was the richest man alive — then gave it all away", "He turned down Netflix and lost $3B"). Companies only through the person who made the fatal call. Name in title + first 2 s.
+2. **Frame 0 = a FACE** (archival PD portrait), slow push-in — not a chart, split card or logo. Most striking frame of the video first.
+3. **First spoken word within 0.5 s; captions from the first word; hook ≤ 1 short sentence (~3 s)** that opens a gap the ending closes.
+4. **Something changes every 1–2 s** (winner had ~12 cuts in first 12 s). Several images per beat with push/pan; beats are not 3–5 s holds.
+5. **Persistent short hook overlay** (e.g. "RICHEST MAN ALIVE. GAVE IT ALL AWAY.") the whole way through.
+6. **Story shape: status → decision → twist mid-video → payoff that answers the hook.** 35–50 s (the 24–30 s cuts left no room for the twist).
+7. **One question answerable in ~3 words**, on screen from mid-video + pinned ("Would you have taken that deal?").
+8. **Focus the channel:** stop long-form and off-niche tests on Aurelis until 500+ subs; same niche every upload so the seed audience is right.
+9. Track per upload: stayed-to-watch, APV, views at 48 h → keep a table in PROJECT_CONTEXT.
+Caveats: vidIQ's title "scores" and keyword volumes are model estimates; "algorithm favors faces (Jun 2026)" is a blog claim, unverified. A 0-view Short is usually not seeded at all — check Studio → traffic source; MH370 (a recent tragedy with deaths) may also be limited as a sensitive event (unconfirmed).
+
+## Night File research (Oct 3 2026 — creator guides + YouTube policy; Reddit not reachable from tooling)
+- **Open loop is the format's engine**: named person + key facts + a REAL unanswered question; audiences punish manufactured mystery. Our best (Flannan, 80% viewed) fits this.
+- **Lead with the person**: victim/subject name + one human detail before the strange facts → emotional investment (same "person, not event" lesson as Aurelis). Frame 0 = their face/photo when PD exists.
+- **Obscure > mainstream**: true-crime viewers already know Zodiac/Cooper/MH370; lesser-known cases perform better. Favour obscure-but-documented cases.
+- **Policy/reach**: no crime-scene/aftermath imagery (removed/age-restricted); never AI-simulate real victims; recent tragedies with many deaths (e.g. MH370) risk sensitive-content limits → prefer historical cases. True-crime Shorts RPM is low ($0.03–0.12) — growth channel, not a money channel.
+- **Sound**: subtle dread (creaks, abrupt silences) beats loud jump-stings; keep the bed, add one silence drop before the twist.
+- **Avoid horror-bait framing** (clickbait titles/thumbnails get suppressed by quality classifiers).
+- Next Night File build: obscure historical person-led case, archival-montage style (face on frame 0, cuts every 1–2 s), 35–45 s, real open question, prompt from mid-video.
