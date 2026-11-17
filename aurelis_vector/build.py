@@ -10,12 +10,14 @@ This:
   2. maps each beat onto its char window -> start/end SECONDS -> frames @ FPS
   3. builds word-level caption cues (for karaoke sync)
   4. writes src/timing.json  (Remotion imports it)
-  5. renders via remotion, then muxes vo.mp3 with ffmpeg -> out/<id>.mp4
+  5. creates original music/SFX and ducks music beneath narration
+  6. renders via Remotion, normalizes the mixed programme and muxes the MP4
 
 Usage: python build.py <script_id>       (default: demo)
 Python: /home/alpha/products/whop-clipper/.venv/bin/python
 """
-import os, sys, json, subprocess, math
+import os, sys, json, subprocess, math, argparse
+from production import decorate_timing
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(ROOT)
@@ -36,21 +38,61 @@ def word_cues(vo_json, gpop=None):
         words.append({"word": "".join(ch[s:i]), "start": st[s], "end": en[i-1]})
     return words
 
+def loudness_filter(audio_path):
+    """Measure the entire programme before final EBU R128 normalization."""
+    result = subprocess.run([
+        "ffmpeg", "-hide_banner", "-nostats", "-i", audio_path,
+        "-af", "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json",
+        "-f", "null", "-"], check=True, capture_output=True, text=True)
+    measured = json.loads(result.stderr[result.stderr.rfind("{"):])
+    fields = {"measured_I": "input_i", "measured_TP": "input_tp",
+              "measured_LRA": "input_lra", "measured_thresh": "input_thresh",
+              "offset": "target_offset"}
+    if not all(math.isfinite(float(measured[key])) for key in fields.values()):
+        raise ValueError("Cannot normalize narration: invalid or silent audio")
+    print(f"[build] programme: {measured['input_i']} LUFS -> target -14 LUFS")
+    options = ":".join(f"{name}={measured[key]}" for name, key in fields.items())
+    return f"loudnorm=I=-14:TP=-1.5:LRA=11:{options}:linear=true,apad"
+
 def main():
-    sid = sys.argv[1] if len(sys.argv) > 1 else "demo"
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("script_id", nargs="?", default="demo")
+    parser.add_argument("--output", help="Review output path; default out/<script_id>.mp4")
+    parser.add_argument("--prepare-only", action="store_true", help="Generate timing and audio stems without rendering")
+    parser.add_argument("--narration-only", action="store_true", help="Omit the score/foley for comparison")
+    parser.add_argument("--edition", default="", help="Separate work cache for a review edition")
+    parser.add_argument("--chunk-seconds", type=float, default=0, help="Resumable video sections; use 60 for long episodes")
+    parser.add_argument("--composition", choices=['Script', 'MoneyHabits'], default='Script')
+    args = parser.parse_args()
+    if args.chunk_seconds and args.chunk_seconds < 1:
+        parser.error('--chunk-seconds must be zero or at least one second')
+    sid = args.script_id
     spath = f"{ROOT}/scripts/{sid}.json"
     if not os.path.exists(spath):
         print(f"ERROR: {spath} not found"); sys.exit(1)
     beats = json.load(open(spath))
-    D = f"{ROOT}/work/{sid}"; os.makedirs(D, exist_ok=True)
+    if args.edition and not all(c.isalnum() or c in '-_' for c in args.edition):
+        parser.error('--edition must contain only letters, numbers, hyphens or underscores')
+    D = f"{ROOT}/work/{sid}" + (f"-{args.edition}" if args.edition else "")
+    os.makedirs(D, exist_ok=True)
 
     full = " ".join(b["vo"] for b in beats)
     vo_json = f"{D}/vo.json"; vo_mp3 = f"{D}/vo.mp3"
-    if not (os.path.exists(vo_json) and os.path.exists(vo_mp3)):
+    cache_matches = False
+    delivery_path = f"{ROOT}/scripts/{sid}.delivery.json"
+    if os.path.exists(delivery_path):
+        from voice_direction import synthesize
+        vo_json, vo_mp3 = synthesize(beats, json.load(open(delivery_path)), D, VOICE_K)
+    if os.path.exists(vo_json) and os.path.exists(vo_mp3):
+        cached_alignment = json.load(open(vo_json))
+        cache_matches = "".join(cached_alignment["characters"]) == full
+    if not cache_matches:
         print("[build] generating Kokoro VO...")
         subprocess.run([PY, KOKORO, full, VOICE_K, LANG_K, D], check=True)
 
     al = json.load(open(vo_json))
+    if "".join(al["characters"]) != full:
+        raise ValueError("Narration alignment does not match the current script")
     ends = al["character_end_times_seconds"]; vend = ends[-1]
 
     # map each beat onto its char window (same technique as build_*.py)
@@ -59,12 +101,16 @@ def main():
         ei = min(cum + len(b["vo"]) - 1, len(ends) - 1)
         seg.append((prev, ends[ei])); prev = ends[ei]; cum += len(b["vo"]) + 1
     seg[-1] = (seg[-1][0], vend)
+    if 'beatWindows' in al:
+        seg = al['beatWindows']
+        vend = al['audioDuration']
 
     tail = 1.2  # loop-back tail
     total_s = vend + tail
     cues = word_cues(vo_json)
 
     timing = {
+        "composition": args.composition,
         "fps": FPS,
         "totalFrames": math.ceil(total_s * FPS),
         "voDuration": vend,
@@ -80,21 +126,40 @@ def main():
                       "startFrame": round(c["start"] * FPS),
                       "endFrame": round(c["end"] * FPS)} for c in cues],
     }
+    timing = decorate_timing(timing)
+    if 'beatWindows' in al:
+        from voice_direction import acoustic_prominence
+        acoustic_prominence(timing['captions'], vo_mp3, FPS)
+    timing['alignmentMethod'] = al.get('alignmentMethod', 'legacy Whisper positional')
+    json.dump(timing, open(f"{D}/timing.json", "w"), indent=1)
     json.dump(timing, open(f"{ROOT}/src/timing.json", "w"), indent=1)
     print(f"[build] timing.json: {len(beats)} beats, {timing['totalFrames']} frames ({total_s:.1f}s)")
+    if timing["cueFallbacks"]:
+        print(f"[build] cue fallback warnings: {timing['cueFallbacks']}")
+    if args.narration_only:
+        programme = vo_mp3
+    else:
+        from audio_mix import build_mix
+        print("[build] composing score, effects, and ducked stereo mix...")
+        programme = build_mix(timing, vo_mp3, D)
+    if args.prepare_only:
+        print(f"[build] prepared -> {programme}")
+        return
 
     # render (silent video)
-    silent = f"{D}/silent.mp4"
     print("[build] rendering Remotion...")
-    subprocess.run(["npx", "remotion", "render", "Script", silent,
-                    "--props", json.dumps({"id": sid})], cwd=ROOT, check=True)
+    from render_video import render
+    silent = render(ROOT, D, sid, timing, args.chunk_seconds)
 
     # mux VO audio
-    out = f"{ROOT}/out/{sid}.mp4"; os.makedirs(f"{ROOT}/out", exist_ok=True)
-    print("[build] muxing audio...")
-    subprocess.run(["ffmpeg", "-y", "-i", silent, "-i", vo_mp3,
+    out = os.path.abspath(args.output) if args.output else f"{ROOT}/out/{sid}.mp4"
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    print("[build] normalizing final mix and muxing audio...")
+    subprocess.run(["ffmpeg", "-y", "-i", silent, "-i", programme,
                     "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
-                    "-shortest", "-movflags", "+faststart", out],
+                    "-af", loudness_filter(programme), "-ar", "48000",
+                    "-t", str(timing["totalFrames"] / FPS),
+                    "-movflags", "+faststart", out],
                    check=True, stderr=subprocess.DEVNULL)
     print(f"[build] DONE -> {out}")
 

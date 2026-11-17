@@ -8,12 +8,21 @@
     "still": "remotion still"
   },
   "dependencies": {
+    "@react-three/drei": "9.114.0",
+    "@react-three/fiber": "8.17.10",
     "@remotion/cli": "4.0.526",
     "@remotion/google-fonts": "^4.0.526",
+    "@remotion/noise": "4.0.526",
+    "@remotion/paths": "4.0.526",
+    "@remotion/three": "4.0.526",
     "@types/react": "^18.3.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "remotion": "4.0.526",
+    "three": "0.169.0",
     "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/three": "^0.169.0"
   }
 }

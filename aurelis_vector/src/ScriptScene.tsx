@@ -6,6 +6,10 @@ import {C, FONT_SERIF, FONT_SANS, W, H} from './theme';
 import {BrandMark, ProgressRing, Hook, NavyBG, Coin, Tower, TycoonImg, Wipe, DataCard, SourceTag,
         EuropeMap, Ledger, SplitScreen, VennInsight} from './components';
 import timing from './timing.json';
+import {AurelisTransition} from './production';
+import {captionPhrases} from './captionPhrases';
+import {RothschildOffice, RothschildNetwork, RothschildLetters, RothschildTransaction,
+        RothschildMarkets, RothschildInsight, RothschildAdapt, RothschildEnd} from './RothschildScenes';
 
 // ---- individual scene renderers (the library; keyed by beat.scene) ----
 // Each uses the REAL fal/FLUX character (TycoonImg) with a pose matched to the beat.
@@ -144,26 +148,37 @@ const Stat: React.FC<{hook:string[]; data?:any}> = ({data}) => (
 
 const SCENES: Record<string, React.FC<{hook:string[]; data?:any}>> =
   {peak:Peak, mistake:Mistake, collapse:Collapse, stat:Stat,
-   map:MapScene, ledger:LedgerScene, split:SplitScene, venn:VennScene, cta:CtaScene};
+   map:MapScene, ledger:LedgerScene, split:SplitScene, venn:VennScene, cta:CtaScene,
+   'rothschild-office':RothschildOffice, 'rothschild-network':RothschildNetwork,
+   'rothschild-letters':RothschildLetters, 'rothschild-transaction':RothschildTransaction,
+   'rothschild-markets':RothschildMarkets, 'rothschild-insight':RothschildInsight,
+   'rothschild-adapt':RothschildAdapt, 'rothschild-end':RothschildEnd};
 
-// ---- word-synced karaoke caption (reads timing.captions, ~3 words visible) ----
+const phrases=captionPhrases(timing.captions,timing.beats);
+// Stable phrase captions: highlight the spoken word without sliding its neighbors.
 const Captions: React.FC = () => {
   const f = useCurrentFrame();
-  const cues = timing.captions as {word:string; startFrame:number; endFrame:number}[];
+  const cues = timing.captions as {word:string; startFrame:number; endFrame:number; emphasis?:boolean; prominence?:number}[];
+  if (!cues.length || f >= cues[cues.length-1].endFrame) return null;
   // find the active cue, show it with its 2 neighbors as a rolling 3-word window
   let idx = cues.findIndex(c => f >= c.startFrame && f < c.endFrame);
   if (idx === -1) { // between words: hold the last-started
     for (let i=cues.length-1;i>=0;i--){ if (f>=cues[i].startFrame){ idx=i; break; } }
   }
   if (idx < 0) return null;
-  const start = Math.max(0, idx-1), win = cues.slice(start, start+3);
+  const phrase=phrases.find(p=>f>=p.start && f<p.end);
+  if(!phrase) return null;
+  const start=phrase.start, win=phrase.words;
   return (
     <div style={{position:'absolute', left:0, right:0, bottom:150, textAlign:'center', zIndex:22, padding:'0 60px'}}>
       <span style={{fontFamily:FONT_SANS, fontWeight:700, fontSize:44, lineHeight:1.5, color:'#fff',
         background:'rgba(11,14,19,.68)', padding:'6px 14px', borderRadius:8,
         boxDecorationBreak:'clone', WebkitBoxDecorationBreak:'clone'}}>
         {win.map((c,i)=>(
-          <span key={start+i} style={{color: f>=c.startFrame && f<c.endFrame ? C.gold : '#fff'}}>
+          <span key={start+i} style={{display:'inline-block',whiteSpace:'pre',
+            color: f>=c.startFrame && f<c.endFrame ? C.gold : '#fff',
+            transform:c.emphasis && f>=c.startFrame && f<c.endFrame ?
+              `scale(${1+(.025+.045*(c.prominence??.5))*Math.sin(Math.PI*(f-c.startFrame)/Math.max(1,c.endFrame-c.startFrame))})` : undefined}}>
             {c.word}{i<win.length-1?' ':''}
           </span>
         ))}
@@ -178,8 +193,8 @@ export const ScriptScene: React.FC = () => {
   return (
     <AbsoluteFill style={{background:C.navy}}>
       {beats.map((b, i) => {
-        const Comp = SCENES[b.scene] ?? Peak;
-        const dur = b.endFrame - b.startFrame;
+        const Comp = SCENES[b.scene] ?? SCENES.peak;
+        const dur = (i === beats.length-1 ? timing.totalFrames : b.endFrame) - b.startFrame;
         return (
           <Sequence key={i} from={b.startFrame} durationInFrames={Math.max(1,dur)}>
             <Comp hook={b.hook ?? ['','']} data={b.data}/>
@@ -191,8 +206,13 @@ export const ScriptScene: React.FC = () => {
       {/* transitions at each beat boundary (skip the first) */}
       {beats.slice(1).map((b,i)=>(
         <React.Fragment key={'w'+i}>
+          {b.scene.startsWith('rothschild-') ?
+            <Sequence from={b.startFrame-9} durationInFrames={18}>
+              <AurelisTransition kind={b.transition ?? 'ink'}/>
+            </Sequence> : <>
           <Sequence from={b.startFrame-WIPE} durationInFrames={WIPE}><Wipe dir="out" dur={WIPE}/></Sequence>
           <Sequence from={b.startFrame} durationInFrames={WIPE}><Wipe dir="in" dur={WIPE}/></Sequence>
+          </>}
         </React.Fragment>
       ))}
       <Captions/>

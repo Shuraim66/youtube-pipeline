@@ -8,9 +8,9 @@ import {C, FONT_SERIF, FONT_SANS} from './theme';
 // Whole-image "puppet" with a POSE LIBRARY. `pose` selects the illustration
 // (neutral/triumph/despair/point — bg-removed PNGs in public/poses/); motion adds
 // life on top (idle sway/breathe, entrance rise, fall). Poses read the emotional beat.
-type Pose = 'neutral'|'triumph'|'despair'|'point';
+type ImagePose = 'neutral'|'triumph'|'despair'|'point';
 export const TycoonImg: React.FC<{
-  x:number; y:number; h?:number; pose?:Pose; mood?:'idle'|'enter'|'fall';
+  x:number; y:number; h?:number; pose?:ImagePose; mood?:'idle'|'enter'|'fall';
 }> = ({x, y, h=1000, pose='neutral', mood='enter'}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();

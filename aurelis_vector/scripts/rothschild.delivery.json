@@ -1,0 +1,18 @@
+{
+  "ttsAliases": {
+    "Rothschild": "Roths-child",
+    "Rothschilds": "Roths-childs"
+  },
+  "rothschild-office": {"speed": 1.04, "pauseAfter": 0.16},
+  "rothschild-network": {"speed": 1.09, "pauseAfter": 0.12},
+  "rothschild-letters": {"speed": 1.06, "phrasePause": 0.1, "pauseAfter": 0.16},
+  "rothschild-transaction": {"speed": 1.04, "pauseAfter": 0.18,
+    "phrases": ["In eighteen seventy five, their London bank lent the British government", "four million pounds to buy Egypt's Suez Canal shares."],
+    "phraseSpeeds": [1.07, 1.01], "phrasePause": 0.08},
+  "rothschild-markets": {"speed": 1.08, "phrasePause": 0.2, "pauseAfter": 0.24},
+  "rothschild-insight": {"speed": 0.98, "pauseAfter": 0.22,
+    "phrases": ["And here's the timeless truth:", "the advantage that builds an empire is rarely the advantage that sustains it."],
+    "phraseSpeeds": [1.07, 0.98], "phrasePause": 0.12},
+  "rothschild-adapt": {"speed": 1.03, "phraseSpeeds": [1.06,1.08,0.99], "phrasePause": 0.1, "pauseAfter": 0.16},
+  "rothschild-end": {"speed": 1.04, "phrasePause": 0.1, "pauseAfter": 0.1}
+}

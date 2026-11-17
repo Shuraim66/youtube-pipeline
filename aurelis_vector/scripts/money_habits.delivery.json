@@ -1,0 +1,487 @@
+{
+  "money-000": {
+    "speed": 1.04,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-001": {
+    "speed": 1.04,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-002": {
+    "speed": 1.04,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-003": {
+    "speed": 1.04,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-004": {
+    "speed": 1.04,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-005": {
+    "speed": 1.04,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-006": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-007": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-008": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-009": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-010": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-011": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-012": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-013": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-014": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-015": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-016": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-017": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-018": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-019": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-020": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-021": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-022": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-023": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-024": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-025": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-026": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-027": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-028": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-029": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-030": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-031": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-032": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-033": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-034": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-035": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-036": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-037": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-038": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-039": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-040": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-041": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-042": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-043": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-044": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-045": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-046": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-047": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-048": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-049": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-050": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-051": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-052": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-053": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-054": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-055": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-056": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-057": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-058": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-059": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-060": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-061": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-062": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-063": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-064": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-065": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-066": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-067": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-068": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-069": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-070": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-071": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-072": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-073": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-074": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-075": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-076": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-077": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-078": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-079": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-080": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-081": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-082": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-083": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-084": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-085": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-086": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-087": {
+    "speed": 1.09,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-088": {
+    "speed": 1.04,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.24
+  },
+  "money-089": {
+    "speed": 1.04,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-090": {
+    "speed": 1.04,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-091": {
+    "speed": 1.04,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-092": {
+    "speed": 1.04,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-093": {
+    "speed": 1.04,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-094": {
+    "speed": 1.04,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "money-095": {
+    "speed": 1.04,
+    "phrasePause": 0.07,
+    "pauseAfter": 0.12
+  },
+  "ttsAliases": {
+    "SPIVA": "Speeva",
+    "U.S.": "US",
+    "SEC": "S.E.C."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "money-short-hook": {"speed": 1.0, "pauseAfter": 0.14},
+  "money-short-subscription": {"speed": 1.0, "pauseAfter": 0.14},
+  "money-short-fee": {"speed": 1.0, "pauseAfter": 0.14},
+  "money-short-impact": {"speed": 1.0, "phrasePause": 0.12, "pauseAfter": 0.16},
+  "money-short-action": {"speed": 1.0, "phrases": ["Take one minute: open your last three statements.", "Circle recurring payments.", "Cancel one you no longer use, or choose to keep it."], "phraseSpeeds": [1.0, 1.0, 0.99], "phrasePause": 0.10, "pauseAfter": 0.18},
+  "money-short-cta": {"speed": 1.0, "phrasePause": 0.12, "pauseAfter": 0.12}
+}

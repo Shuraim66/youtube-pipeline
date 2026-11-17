@@ -1,0 +1,11 @@
+{
+  "ttsAliases": {"700,000": "seven-hundred-thousand", "2014": "twenty-fourteen", "E.T. game": "E-T game"},
+  "atari-hook": {"speed": 1.16, "pauseAfter": 0.06},
+  "atari-concrete": {"speed": 1.1, "pauseAfter": 0.14},
+  "atari-buy": {"speed": 1.18, "phrases": ["Rewind.", "Warner bought Atari for twenty-eight million."], "phraseSpeeds": [1.05, 1.18], "phrasePause": 0.06, "pauseAfter": 0.05},
+  "atari-boom": {"speed": 1.18, "pauseAfter": 0.05},
+  "atari-rush": {"speed": 1.18, "phrases": ["Then it rushed an E.T. game in under six weeks."], "pauseAfter": 0.05},
+  "atari-flop": {"speed": 1.15, "phrases": ["It needed four million sales.", "It flopped."], "phraseSpeeds": [1.18, 1.02], "phrasePause": 0.1, "pauseAfter": 0.08},
+  "atari-loss": {"speed": 1.16, "pauseAfter": 0.1},
+  "atari-dig": {"speed": 1.14, "pauseAfter": 0.0}
+}

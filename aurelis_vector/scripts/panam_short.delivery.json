@@ -1,0 +1,9 @@
+{
+  "panam-hook": {"speed": 1.02, "pauseAfter": 0.14},
+  "panam-empire": {"speed": 1.04, "pauseAfter": 0.12},
+  "panam-jet": {"speed": 1.04, "pauseAfter": 0.12},
+  "panam-crack": {"speed": 1.03, "pauseAfter": 0.14},
+  "panam-firesale": {"speed": 1.03, "phrasePause": 0.10, "pauseAfter": 0.14},
+  "panam-collapse": {"speed": 1.0, "pauseAfter": 0.16},
+  "panam-cta": {"speed": 1.02, "phrases": ["The giants that felt permanent fall the fastest.", "Follow for the next one."], "phraseSpeeds": [1.02, 1.0], "phrasePause": 0.12, "pauseAfter": 0.10}
+}

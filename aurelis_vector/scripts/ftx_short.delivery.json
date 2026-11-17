@@ -1,0 +1,74 @@
+{
+ "ttsAliases": {
+  "FTX": "F-T-X",
+  "NBA": "N-B-A"
+ },
+ "ftx-hook": {
+  "speed": 1.12,
+  "phrases": [
+   "FTX was worth thirty-two billion.",
+   "It died in ten days."
+  ],
+  "phraseSpeeds": [
+   1.18,
+   1.04
+  ],
+  "phrasePause": 0.12,
+  "pauseAfter": 0.08
+ },
+ "ftx-arena": {
+  "speed": 1.14,
+  "pauseAfter": 0.06
+ },
+ "ftx-leak": {
+  "speed": 1.14,
+  "pauseAfter": 0.06
+ },
+ "ftx-token": {
+  "speed": 1.18,
+  "pauseAfter": 0.06
+ },
+ "ftx-run": {
+  "speed": 1.14,
+  "phrases": [
+   "A rival dumped the token.",
+   "Customers ran."
+  ],
+  "phraseSpeeds": [
+   1.16,
+   1.04
+  ],
+  "phrasePause": 0.1,
+  "pauseAfter": 0.06
+ },
+ "ftx-vault": {
+  "speed": 1.14,
+  "phrases": [
+   "Billions left in three days.",
+   "Eight billion was missing."
+  ],
+  "phraseSpeeds": [
+   1.18,
+   1.08
+  ],
+  "phrasePause": 0.12,
+  "pauseAfter": 0.08
+ },
+ "ftx-bankrupt": {
+  "speed": 1.08,
+  "pauseAfter": 0.12
+ },
+ "ftx-end": {
+  "speed": 1.12,
+  "phrases": [
+   "The founder got twenty-five years.",
+   "Most customers got paid back."
+  ],
+  "phraseSpeeds": [
+   1.14,
+   1.1
+  ],
+  "phrasePause": 0.14,
+  "pauseAfter": 0.0
+ }
+}
