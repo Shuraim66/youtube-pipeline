@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-18",
  "style": "Aurelis flat hand-drawn (AURELIS_STYLE_GUIDE.md)",
  "note": "plates are 1536x864 RGB; mascot files are RGBA cut-outs. Pick by tag, e.g. kind=='plate' and 'bank' in tags.",
  "images": [
@@ -2774,6 +2774,44 @@
    "imported": false,
    "size": "1536*864",
    "seed": 7
+  },
+  {
+   "filename": "plate_front_door_evening.png",
+   "id": "plate_front_door_evening",
+   "kind": "plate",
+   "description": "Front door at evening with warm light, empty",
+   "tags": [
+    "plate"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [],
+   "imported": true,
+   "size": "1536*864",
+   "seed": null,
+   "source": "external (library_add_image.py)",
+   "added": "2026-11-18"
+  },
+  {
+   "filename": "mascot_wave_front.png",
+   "id": "mascot_wave_front",
+   "kind": "cutout",
+   "description": "Mascot waving hello, front view",
+   "tags": [
+    "front",
+    "mascot",
+    "wave"
+   ],
+   "pose": "wave",
+   "view": "front",
+   "prop": null,
+   "traps": [],
+   "imported": true,
+   "size": "575*839",
+   "seed": null,
+   "source": "external (library_add_image.py)",
+   "added": "2026-11-18"
   }
  ]
 }
