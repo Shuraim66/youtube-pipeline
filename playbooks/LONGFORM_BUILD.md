@@ -36,6 +36,22 @@ The scripts in `scripts/` were run with `/home/alpha/products/whop-clipper/.venv
 | package | `scripts/oldmoney_package.py` (SRT from script text + Whisper times; private manifest entry with chapters from real timings + full sources) | `aurelis_oldmoney.json`, `.en.srt` |
 | thumbnail | `scripts/thumb_finish.py <png>` (logo bottom-left, 1280×720 JPG < 2 MB) | `empires_short/out/thumbnails/` |
 
+**Real run order (from the 2026-11-18 Muse AI test; the table above is not the dependency order):**
+1. Add any NEW plates/cut-outs to the library first (`library_add_image.py`, no `--force`) — the planner exits non-zero on a missing asset.
+2. plan → voice → Whisper → number check.
+3. **build_data BEFORE mix** — `<name>_mix.py` reads `data.json` for the total length.
+4. mix → render → report.
+
+**Known gotchas**
+* `library_add_image.py` rewrites tracked files as a side effect (`library.json` + 4 `contact_*.png` sheets). That is expected, not an overwrite by you; list them in the report.
+* Two-pass loudnorm undershoots (~ -14.7 / -15.3 LUFS) when true-peak limiting engages. Fix: extra single-pass `loudnorm=I=-14:TP=-1.5:linear=true` until -14.0 ±0.3, and say so in the report. If loudnorm rejects `measured_thresh`, pass pass-1 `input_thresh` (never `target_offset`).
+* Number check vs Whisper: Whisper writes numbers as digits ("70 %") while the script respells them. Normalising number words/digits is allowed. Any OTHER loosening (dropping a number, relaxing a word) must be reported as an ADJUSTED check, and the test is marked FAIL. A Whisper mishear of an ordinary word ("make"→"makes") on a spoken line proven correct by Kokoro G2P is reported as FAIL with the evidence, not worked around; the user decides.
+* Myth/disputed card = banner "OFTEN QUOTED · NEVER PROVEN" + CHALLENGED stamp: the default stamp (48 px, top 70, right 40) lands on the banner on the 1060 px side card. Use the `src/muse30/Muse30.tsx` geometry (36 px, top 92, right 52, `stampAt` on the spoken word) and re-check at phone size; keep the stamp off the figure itself.
+* Brand chip must not share the top-left with a title card; hide the chip while a title card is up. Two-source lines must fit the pill on one line (shorten wording) — no wrapped source lines.
+* Never add a "full video / N habits in the full video" CTA unless that long-form exists.
+* Puppet pointing starts only when the card it points at is visible.
+* Git-status check for a copy-and-adapt test = new files + the 5 library files above; nothing deleted, no commits.
+
 New video: copy the nine `oldmoney_*` scripts to `<name>_*`, change the paths/titles/section order/`CH` names/`PRON`, write a new `<name>_spec.py`, point `entry.tsx` at a new comp (copy `src/oldmoney/`). Keep `src/puppet/Puppet.v2.0.locked.tsx` untouched (it is the locked mascot; changes go in a new version file).
 
 ## 3. Script and retention (watch-time) rules
