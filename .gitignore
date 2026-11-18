@@ -80,3 +80,23 @@ aurelis_vector/out/
 blender_test/dl/
 blender_test/out/frames/
 blender_test/out/*.png
+
+# --- long-form pipeline: assets and config that MUST be tracked so a fresh clone can build a video (see playbooks/LONGFORM_BUILD.md) ---
+# (the rules above ignore every .png/.wav/.json; these exceptions re-include only what the renderer needs. Generated data, narration audio and videos stay ignored.)
+!empires_short/package.json
+!empires_short/package-lock.json
+!empires_short/tsconfig.json
+!empires_short/public/emblem.png
+!empires_short/public/img/aurelis/library/*.png
+!empires_short/public/img/aurelis/library/library.json
+!empires_short/public/img/aurelis/puppet/head_front.png
+!empires_short/public/img/aurelis/puppet/v2/*.png
+!empires_short/public/img/aurelis/puppet/v2/*.json
+empires_short/public/img/aurelis/puppet/v2/_qa_*.png
+!empires_short/public/sfx/*.wav
+!assets/emblem*.png
+!assets/audio/aurelis_bed.wav
+!brand/aurelis_logo.png
+
+!playbooks/reference/*.jpg
+!assets/mascot/*.png

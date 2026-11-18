@@ -116,8 +116,14 @@ export function chibi(ctx, x, y, s = 1, p = {}, L = {}) {
   else if (m === "flat" || m === "M") line(ctx, [[-9, my + 2], [9, my + 2]], 3.6);
   else if (m === "frown") { ctx.beginPath(); ctx.moveTo(-10, my + 5); ctx.quadraticCurveTo(0, my - 3, 10, my + 5); stroke(ctx, 3.6); }
   else { const shp = { smile: [16, 12, 1], open: [14, 14, 1], A: [11, 13, 0], E: [13, 8, 0], O: [7, 9, 0], U: [6, 7, 0] }[m] || [12, 10, 0];
-    ctx.beginPath(); if (shp[2]) { ctx.moveTo(-shp[0], my - 2); ctx.quadraticCurveTo(0, my - 2 + shp[1] * 2, shp[0], my - 2); ctx.closePath(); } else ctx.ellipse(0, my + 3, shp[0], shp[1], 0, 0, Math.PI * 2);
-    fill(ctx, "#7A1E26"); ctx.save(); ctx.clip(); ellipse(ctx, 0, my + shp[1] + 2, shp[0] * .8, shp[1] * .6); fill(ctx, "#E86A74"); ctx.restore(); stroke(ctx, 3.4);
+    // Mouth outline as a reusable path: the tongue helper below starts a new
+    // path, so stroking after it would outline the TONGUE (a stray ringed ball
+    // hanging below the lips). Re-create the mouth path before stroking.
+    // (Fix 2026-11-18: the old code stroked the tongue ellipse.)
+    const mouthPath = () => { ctx.beginPath(); if (shp[2]) { ctx.moveTo(-shp[0], my - 2); ctx.quadraticCurveTo(0, my - 2 + shp[1] * 2, shp[0], my - 2); ctx.closePath(); } else ctx.ellipse(0, my + 3, shp[0], shp[1], 0, 0, Math.PI * 2); };
+    mouthPath(); fill(ctx, "#7A1E26");
+    ctx.save(); ctx.clip(); ellipse(ctx, 0, my + 3 + shp[1] * 0.45, shp[0] * .8, shp[1] * .55); fill(ctx, "#E86A74"); ctx.restore();
+    mouthPath(); stroke(ctx, 3.4);
     if (shp[2]) { ctx.beginPath(); ctx.moveTo(-shp[0] + 3, my); ctx.lineTo(shp[0] - 3, my); stroke(ctx, 4, "#FFFFFF"); } }
   if (p.sweat) { ctx.save(); ctx.globalAlpha *= p.sweat; ctx.beginPath(); ctx.moveTo(70, -34); ctx.quadraticCurveTo(80, -18, 70, -12); ctx.quadraticCurveTo(60, -18, 70, -34); fill(ctx, "#9CCBEA"); stroke(ctx, 2.4); ctx.restore(); }
   ctx.restore(); }

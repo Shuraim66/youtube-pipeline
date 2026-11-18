@@ -1,0 +1,189 @@
+{
+ "pointL": {
+  "file": "mascot_alux_point_left.png",
+  "mirror": false,
+  "ox": -70,
+  "oy": 17,
+  "w": 485,
+  "h": 769,
+  "hx": 210.0,
+  "hy": 274.0,
+  "hs": 1.033
+ },
+ "thumbs": {
+  "file": "mascot_thumbs_up_front.png",
+  "mirror": false,
+  "ox": -72,
+  "oy": -3,
+  "w": 508,
+  "h": 809,
+  "hx": 190.0,
+  "hy": 286.5,
+  "hs": 1.016
+ },
+ "shrug": {
+  "file": "mascot_shrug_front.png",
+  "mirror": false,
+  "ox": -103,
+  "oy": 50,
+  "w": 651,
+  "h": 756,
+  "hx": 219.5,
+  "hy": 317.5,
+  "hs": 0.914
+ },
+ "celebrate": {
+  "file": "mascot_celebrate_front.png",
+  "mirror": false,
+  "ox": -88,
+  "oy": -3,
+  "w": 626,
+  "h": 809,
+  "hx": 221.0,
+  "hy": 277.5,
+  "hs": 1.0
+ },
+ "explain": {
+  "file": "mascot_explaining_front.png",
+  "mirror": false,
+  "ox": -118,
+  "oy": -1,
+  "w": 549,
+  "h": 807,
+  "hx": 187.5,
+  "hy": 286.0,
+  "hs": 1.004
+ },
+ "worried": {
+  "file": "mascot_worried_front.png",
+  "mirror": false,
+  "ox": -6,
+  "oy": -13,
+  "w": 477,
+  "h": 812,
+  "hx": 219.5,
+  "hy": 284.5,
+  "hs": 1.037
+ },
+ "p_cash": {
+  "file": "mascot_cash_fan_front.png",
+  "mirror": false,
+  "ox": -122,
+  "oy": -7,
+  "w": 587,
+  "h": 810,
+  "hx": 220.0,
+  "hy": 279.0,
+  "hs": 1.008
+ },
+ "p_card": {
+  "file": "mascot_alux_card_hold_up.png",
+  "mirror": false,
+  "ox": 64,
+  "oy": 19,
+  "w": 442,
+  "h": 767,
+  "hx": 264.5,
+  "hy": 289.5,
+  "hs": 1.02
+ },
+ "p_piggy_bank": {
+  "file": "mascot_piggy_bank_hold_front.png",
+  "mirror": false,
+  "ox": 4,
+  "oy": -8,
+  "w": 458,
+  "h": 814,
+  "hx": 220.5,
+  "hy": 277.0,
+  "hs": 0.996
+ },
+ "p_phone": {
+  "file": "mascot_phone_scroll_front.png",
+  "mirror": false,
+  "ox": -29,
+  "oy": -3,
+  "w": 456,
+  "h": 809,
+  "hx": 187.0,
+  "hy": 275.5,
+  "hs": 0.992
+ },
+ "p_receipt": {
+  "file": "mascot_receipt_shocked_front.png",
+  "mirror": false,
+  "ox": -44,
+  "oy": 5,
+  "w": 587,
+  "h": 801,
+  "hx": 306.5,
+  "hy": 288.0,
+  "hs": 0.98
+ },
+ "p_calendar": {
+  "file": "mascot_calendar_hold_front.png",
+  "mirror": false,
+  "ox": 4,
+  "oy": 3,
+  "w": 459,
+  "h": 801,
+  "hx": 221.0,
+  "hy": 289.5,
+  "hs": 1.0
+ },
+ "p_lottery_ticket": {
+  "file": "mascot_lottery_ticket_hold_front.png",
+  "mirror": false,
+  "ox": -95,
+  "oy": -8,
+  "w": 561,
+  "h": 813,
+  "hx": 221.0,
+  "hy": 281.0,
+  "hs": 1.008
+ },
+ "p_pay_slip": {
+  "file": "mascot_pay_slip_open_front.png",
+  "mirror": false,
+  "ox": 2,
+  "oy": -1,
+  "w": 458,
+  "h": 807,
+  "hx": 220.0,
+  "hy": 286.0,
+  "hs": 1.0
+ },
+ "p_clipboard": {
+  "file": "mascot_clipboard_show_front.png",
+  "mirror": false,
+  "ox": 1,
+  "oy": -13,
+  "w": 462,
+  "h": 819,
+  "hx": 219.0,
+  "hy": 274.0,
+  "hs": 1.008
+ },
+ "p_test_paper": {
+  "file": "mascot_test_paper_pencil_front.png",
+  "mirror": false,
+  "ox": -38,
+  "oy": 29,
+  "w": 491,
+  "h": 777,
+  "hx": 218.0,
+  "hy": 304.5,
+  "hs": 0.959
+ },
+ "p_car_keys": {
+  "file": "mascot_car_keys_hold_front.png",
+  "mirror": false,
+  "ox": -99,
+  "oy": -3,
+  "w": 566,
+  "h": 809,
+  "hx": 223.5,
+  "hy": 282.0,
+  "hs": 1.004
+ }
+}

@@ -22,3 +22,5 @@ Every new Short for **Aurelis HQ** or **The Night File** goes through that workf
 - Render: `ArchivalShort` with `templateVersion: "v2"`; `npm test` + `npm run validate` + `scripts/experiment.py` in `empires_short/`. V1 rendering must not change.
 - Metrics: `record_metrics.py` → `analytics/metrics.csv` at 48 h / 7 d from numbers the user pastes (no direct Analytics access). Treat patterns as hypotheses.
 
+## Long-form videos (mascot + text cards + library visuals) — follow [`playbooks/LONGFORM_BUILD.md`](./playbooks/LONGFORM_BUILD.md)
+Setup and proof that a checkout can build one: `python scripts/longform_preflight.py`. Rules: `playbooks/PUPPET_BEAT_RULES.md`, `playbooks/LONGFORM_RETENTION.md`. Reference frames: `playbooks/reference/`. Same gates as above (plan gate, render gate; never upload without approval). Never delete untracked files without staging them somewhere recoverable first.

@@ -1,0 +1,2779 @@
+{
+ "updated": "2026-11-13",
+ "style": "Aurelis flat hand-drawn (AURELIS_STYLE_GUIDE.md)",
+ "note": "plates are 1536x864 RGB; mascot files are RGBA cut-outs. Pick by tag, e.g. kind=='plate' and 'bank' in tags.",
+ "images": [
+  {
+   "filename": "plate_office_desk.png",
+   "id": "plate_office_desk",
+   "kind": "plate",
+   "description": "Office desk with blank monitor and papers",
+   "tags": [
+    "office",
+    "desk",
+    "work",
+    "job",
+    "salary",
+    "trap4"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    4
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_bank_counter.png",
+   "id": "plate_bank_counter",
+   "kind": "plate",
+   "description": "Bank teller counter with glass partition",
+   "tags": [
+    "bank",
+    "counter",
+    "loan",
+    "savings",
+    "trap5",
+    "trap4"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    5,
+    4
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_shop_counter.png",
+   "id": "plate_shop_counter",
+   "kind": "plate",
+   "description": "Small shop counter with till",
+   "tags": [
+    "shop",
+    "store",
+    "counter",
+    "retail",
+    "pay",
+    "trap2"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_kitchen_table.png",
+   "id": "plate_kitchen_table",
+   "kind": "plate",
+   "description": "Kitchen table with bills and a coffee",
+   "tags": [
+    "kitchen",
+    "home",
+    "table",
+    "bills",
+    "budget",
+    "trap10",
+    "trap7",
+    "trap1"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    10,
+    7,
+    1
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_trading_screens.png",
+   "id": "plate_trading_screens",
+   "kind": "plate",
+   "description": "Trading desk with three blank chart screens",
+   "tags": [
+    "trading",
+    "stocks",
+    "screens",
+    "market",
+    "invest",
+    "trap6",
+    "trap5"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    6,
+    5
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_payday_desk.png",
+   "id": "plate_payday_desk",
+   "kind": "plate",
+   "description": "Desk at payday: envelope and calculator",
+   "tags": [
+    "payday",
+    "salary",
+    "income",
+    "desk",
+    "trap8",
+    "trap4"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    8,
+    4
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_bedroom_night.png",
+   "id": "plate_bedroom_night",
+   "kind": "plate",
+   "description": "Bedroom at night with phone glow",
+   "tags": [
+    "bedroom",
+    "night",
+    "home",
+    "phone",
+    "scroll",
+    "trap3"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    3
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_supermarket_aisle.png",
+   "id": "plate_supermarket_aisle",
+   "kind": "plate",
+   "description": "Supermarket aisle with blank shelves",
+   "tags": [
+    "supermarket",
+    "grocery",
+    "aisle",
+    "shopping",
+    "price",
+    "trap3",
+    "trap2"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    3,
+    2
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_car_dealership.png",
+   "id": "plate_car_dealership",
+   "kind": "plate",
+   "description": "Car dealership forecourt with one car",
+   "tags": [
+    "car",
+    "dealership",
+    "loan",
+    "buy",
+    "auto",
+    "trap9"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    9
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_coffee_shop.png",
+   "id": "plate_coffee_shop",
+   "kind": "plate",
+   "description": "Coffee shop counter and tables",
+   "tags": [
+    "coffee",
+    "cafe",
+    "latte",
+    "small spending",
+    "trap3"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    3
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_living_room_sofa.png",
+   "id": "plate_living_room_sofa",
+   "kind": "plate",
+   "description": "Living room with sofa and TV",
+   "tags": [
+    "living room",
+    "home",
+    "sofa",
+    "tv",
+    "ads",
+    "trap3"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    3
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_home_office_laptop.png",
+   "id": "plate_home_office_laptop",
+   "kind": "plate",
+   "description": "Home office with laptop and shelf",
+   "tags": [
+    "home office",
+    "laptop",
+    "side hustle",
+    "online",
+    "trap10",
+    "trap4"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    10,
+    4
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_apartment_hallway.png",
+   "id": "plate_apartment_hallway",
+   "kind": "plate",
+   "description": "Apartment hallway with doors",
+   "tags": [
+    "rent",
+    "landlord",
+    "apartment",
+    "door",
+    "housing",
+    "trap9",
+    "trap1"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    9,
+    1
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 8
+  },
+  {
+   "filename": "plate_mall_storefronts.png",
+   "id": "plate_mall_storefronts",
+   "kind": "plate",
+   "description": "Shopping mall concourse",
+   "tags": [
+    "mall",
+    "shopping",
+    "sale",
+    "retail",
+    "impulse",
+    "trap9",
+    "trap3"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    9,
+    3
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_restaurant_table.png",
+   "id": "plate_restaurant_table",
+   "kind": "plate",
+   "description": "Restaurant table for two",
+   "tags": [
+    "restaurant",
+    "dinner",
+    "bill",
+    "tip",
+    "eating out",
+    "trap2"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_library_study.png",
+   "id": "plate_library_study",
+   "kind": "plate",
+   "description": "Library or study room",
+   "tags": [
+    "library",
+    "study",
+    "learning",
+    "school",
+    "education",
+    "trap10"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    10
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_lottery_kiosk.png",
+   "id": "plate_lottery_kiosk",
+   "kind": "plate",
+   "description": "Lottery kiosk at a corner shop",
+   "tags": [
+    "lottery",
+    "kiosk",
+    "corner shop",
+    "ticket",
+    "luck",
+    "gambling",
+    "trap8"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    8
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_two_houses_new_car.png",
+   "id": "plate_two_houses_new_car",
+   "kind": "plate",
+   "description": "Two house fronts side by side, shiny new car in one driveway",
+   "tags": [
+    "neighbours",
+    "house",
+    "car",
+    "driveway",
+    "suburb",
+    "envy",
+    "trap9"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    9
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_suburban_fence.png",
+   "id": "plate_suburban_fence",
+   "kind": "plate",
+   "description": "Suburban street with a fence between two gardens",
+   "tags": [
+    "neighbours",
+    "fence",
+    "garden",
+    "suburb",
+    "envy",
+    "trap9"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    9
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_sugarcane_harvest.png",
+   "id": "plate_sugarcane_harvest",
+   "kind": "plate",
+   "description": "Sugarcane field at harvest, no people",
+   "tags": [
+    "sugarcane",
+    "farm",
+    "harvest",
+    "field",
+    "scarcity",
+    "india",
+    "trap1"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    1
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_house_front.png",
+   "id": "plate_house_front",
+   "kind": "plate",
+   "description": "House front with for-sale post",
+   "tags": [
+    "house",
+    "mortgage",
+    "property",
+    "real estate",
+    "buy home",
+    "trap9",
+    "trap8"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    9,
+    8
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_startup_garage.png",
+   "id": "plate_startup_garage",
+   "kind": "plate",
+   "description": "Startup garage with whiteboard",
+   "tags": [
+    "startup",
+    "garage",
+    "business",
+    "founder",
+    "whiteboard",
+    "trap6"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    6
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_park_bench.png",
+   "id": "plate_park_bench",
+   "kind": "plate",
+   "description": "Park bench with trees",
+   "tags": [
+    "park",
+    "bench",
+    "calm",
+    "outside",
+    "thinking",
+    "trap5"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    5
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_checkout_lane.png",
+   "id": "plate_checkout_lane",
+   "kind": "plate",
+   "description": "Supermarket checkout lane",
+   "tags": [
+    "checkout",
+    "self checkout",
+    "pay",
+    "tap",
+    "card",
+    "trap2"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_idle_front.png",
+   "id": "mascot_idle_front",
+   "kind": "cutout",
+   "description": "Mascot idle, front view",
+   "tags": [
+    "mascot",
+    "idle",
+    "neutral",
+    "front",
+    "no prop"
+   ],
+   "pose": "idle",
+   "view": "front",
+   "prop": null,
+   "traps": [],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_idle_threeq.png",
+   "id": "mascot_idle_threeq",
+   "kind": "cutout",
+   "description": "Mascot idle, threeq view",
+   "tags": [
+    "mascot",
+    "idle",
+    "neutral",
+    "threeq",
+    "no prop"
+   ],
+   "pose": "idle",
+   "view": "threeq",
+   "prop": null,
+   "traps": [],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_happy_front.png",
+   "id": "mascot_happy_front",
+   "kind": "cutout",
+   "description": "Mascot happy, front view",
+   "tags": [
+    "mascot",
+    "happy",
+    "happy",
+    "front",
+    "no prop"
+   ],
+   "pose": "happy",
+   "view": "front",
+   "prop": null,
+   "traps": [],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 9
+  },
+  {
+   "filename": "mascot_happy_threeq.png",
+   "id": "mascot_happy_threeq",
+   "kind": "cutout",
+   "description": "Mascot happy, threeq view",
+   "tags": [
+    "mascot",
+    "happy",
+    "happy",
+    "threeq",
+    "no prop"
+   ],
+   "pose": "happy",
+   "view": "threeq",
+   "prop": null,
+   "traps": [],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_surprised_threeq.png",
+   "id": "mascot_surprised_threeq",
+   "kind": "cutout",
+   "description": "Mascot surprised, threeq view",
+   "tags": [
+    "mascot",
+    "surprised",
+    "surprised",
+    "threeq",
+    "no prop",
+    "trap8"
+   ],
+   "pose": "surprised",
+   "view": "threeq",
+   "prop": null,
+   "traps": [
+    8
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_worried_front.png",
+   "id": "mascot_worried_front",
+   "kind": "cutout",
+   "description": "Mascot worried, front view",
+   "tags": [
+    "mascot",
+    "worried",
+    "worried",
+    "front",
+    "no prop",
+    "trap7",
+    "trap5",
+    "trap1"
+   ],
+   "pose": "worried",
+   "view": "front",
+   "prop": null,
+   "traps": [
+    7,
+    5,
+    1
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 8
+  },
+  {
+   "filename": "mascot_worried_threeq.png",
+   "id": "mascot_worried_threeq",
+   "kind": "cutout",
+   "description": "Mascot worried, threeq view",
+   "tags": [
+    "mascot",
+    "worried",
+    "worried",
+    "threeq",
+    "no prop",
+    "trap7",
+    "trap5",
+    "trap1"
+   ],
+   "pose": "worried",
+   "view": "threeq",
+   "prop": null,
+   "traps": [
+    7,
+    5,
+    1
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 8
+  },
+  {
+   "filename": "mascot_sad_front.png",
+   "id": "mascot_sad_front",
+   "kind": "cutout",
+   "description": "Mascot sad, front view",
+   "tags": [
+    "mascot",
+    "sad",
+    "sad",
+    "front",
+    "no prop",
+    "trap7",
+    "trap1"
+   ],
+   "pose": "sad",
+   "view": "front",
+   "prop": null,
+   "traps": [
+    7,
+    1
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_sad_threeq.png",
+   "id": "mascot_sad_threeq",
+   "kind": "cutout",
+   "description": "Mascot sad, threeq view",
+   "tags": [
+    "mascot",
+    "sad",
+    "sad",
+    "threeq",
+    "no prop",
+    "trap7",
+    "trap1"
+   ],
+   "pose": "sad",
+   "view": "threeq",
+   "prop": null,
+   "traps": [
+    7,
+    1
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_angry_front.png",
+   "id": "mascot_angry_front",
+   "kind": "cutout",
+   "description": "Mascot angry, front view",
+   "tags": [
+    "mascot",
+    "angry",
+    "angry",
+    "front",
+    "no prop",
+    "trap5"
+   ],
+   "pose": "angry",
+   "view": "front",
+   "prop": null,
+   "traps": [
+    5
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_angry_threeq.png",
+   "id": "mascot_angry_threeq",
+   "kind": "cutout",
+   "description": "Mascot angry, threeq view",
+   "tags": [
+    "mascot",
+    "angry",
+    "angry",
+    "threeq",
+    "no prop",
+    "trap5"
+   ],
+   "pose": "angry",
+   "view": "threeq",
+   "prop": null,
+   "traps": [
+    5
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_confident_front.png",
+   "id": "mascot_confident_front",
+   "kind": "cutout",
+   "description": "Mascot confident, front view",
+   "tags": [
+    "mascot",
+    "confident",
+    "confident",
+    "front",
+    "no prop",
+    "trap6"
+   ],
+   "pose": "confident",
+   "view": "front",
+   "prop": null,
+   "traps": [
+    6
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_confident_threeq.png",
+   "id": "mascot_confident_threeq",
+   "kind": "cutout",
+   "description": "Mascot confident, threeq view",
+   "tags": [
+    "mascot",
+    "confident",
+    "confident",
+    "threeq",
+    "no prop",
+    "trap6"
+   ],
+   "pose": "confident",
+   "view": "threeq",
+   "prop": null,
+   "traps": [
+    6
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_explaining_front.png",
+   "id": "mascot_explaining_front",
+   "kind": "cutout",
+   "description": "Mascot explaining, front view",
+   "tags": [
+    "mascot",
+    "explaining",
+    "explaining",
+    "front",
+    "no prop",
+    "trap10"
+   ],
+   "pose": "explaining",
+   "view": "front",
+   "prop": null,
+   "traps": [
+    10
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_explaining_threeq.png",
+   "id": "mascot_explaining_threeq",
+   "kind": "cutout",
+   "description": "Mascot explaining, threeq view",
+   "tags": [
+    "mascot",
+    "explaining",
+    "explaining",
+    "threeq",
+    "no prop",
+    "trap10"
+   ],
+   "pose": "explaining",
+   "view": "threeq",
+   "prop": null,
+   "traps": [
+    10
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_thumbs_up_front.png",
+   "id": "mascot_thumbs_up_front",
+   "kind": "cutout",
+   "description": "Mascot thumbs up, front view",
+   "tags": [
+    "mascot",
+    "thumbs_up",
+    "happy",
+    "front",
+    "no prop",
+    "trap6"
+   ],
+   "pose": "thumbs_up",
+   "view": "front",
+   "prop": null,
+   "traps": [
+    6
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_thumbs_up_threeq.png",
+   "id": "mascot_thumbs_up_threeq",
+   "kind": "cutout",
+   "description": "Mascot thumbs up, threeq view",
+   "tags": [
+    "mascot",
+    "thumbs_up",
+    "happy",
+    "threeq",
+    "no prop",
+    "trap6"
+   ],
+   "pose": "thumbs_up",
+   "view": "threeq",
+   "prop": null,
+   "traps": [
+    6
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_shrug_front.png",
+   "id": "mascot_shrug_front",
+   "kind": "cutout",
+   "description": "Mascot shrug, front view",
+   "tags": [
+    "mascot",
+    "shrug",
+    "confused",
+    "front",
+    "no prop"
+   ],
+   "pose": "shrug",
+   "view": "front",
+   "prop": null,
+   "traps": [],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 9
+  },
+  {
+   "filename": "mascot_shrug_threeq.png",
+   "id": "mascot_shrug_threeq",
+   "kind": "cutout",
+   "description": "Mascot shrug, threeq view",
+   "tags": [
+    "mascot",
+    "shrug",
+    "confused",
+    "threeq",
+    "no prop"
+   ],
+   "pose": "shrug",
+   "view": "threeq",
+   "prop": null,
+   "traps": [],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_celebrate_front.png",
+   "id": "mascot_celebrate_front",
+   "kind": "cutout",
+   "description": "Mascot celebrate, front view",
+   "tags": [
+    "mascot",
+    "celebrate",
+    "excited",
+    "front",
+    "no prop",
+    "trap8"
+   ],
+   "pose": "celebrate",
+   "view": "front",
+   "prop": null,
+   "traps": [
+    8
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_celebrate_threeq.png",
+   "id": "mascot_celebrate_threeq",
+   "kind": "cutout",
+   "description": "Mascot celebrate, threeq view",
+   "tags": [
+    "mascot",
+    "celebrate",
+    "excited",
+    "threeq",
+    "no prop",
+    "trap8"
+   ],
+   "pose": "celebrate",
+   "view": "threeq",
+   "prop": null,
+   "traps": [
+    8
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_running_front.png",
+   "id": "mascot_running_front",
+   "kind": "cutout",
+   "description": "Mascot running, front view",
+   "tags": [
+    "mascot",
+    "running",
+    "stressed",
+    "front",
+    "no prop",
+    "trap1"
+   ],
+   "pose": "running",
+   "view": "front",
+   "prop": null,
+   "traps": [
+    1
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_running_threeq.png",
+   "id": "mascot_running_threeq",
+   "kind": "cutout",
+   "description": "Mascot running, threeq view",
+   "tags": [
+    "mascot",
+    "running",
+    "stressed",
+    "threeq",
+    "no prop",
+    "trap1"
+   ],
+   "pose": "running",
+   "view": "threeq",
+   "prop": null,
+   "traps": [
+    1
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_sitting_front.png",
+   "id": "mascot_sitting_front",
+   "kind": "cutout",
+   "description": "Mascot sitting, front view",
+   "tags": [
+    "mascot",
+    "sitting",
+    "neutral",
+    "front",
+    "no prop",
+    "trap4"
+   ],
+   "pose": "sitting",
+   "view": "front",
+   "prop": null,
+   "traps": [
+    4
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_sitting_threeq.png",
+   "id": "mascot_sitting_threeq",
+   "kind": "cutout",
+   "description": "Mascot sitting, threeq view",
+   "tags": [
+    "mascot",
+    "sitting",
+    "neutral",
+    "threeq",
+    "no prop",
+    "trap4"
+   ],
+   "pose": "sitting",
+   "view": "threeq",
+   "prop": null,
+   "traps": [
+    4
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_yawning_front.png",
+   "id": "mascot_yawning_front",
+   "kind": "cutout",
+   "description": "Mascot yawning, front view",
+   "tags": [
+    "mascot",
+    "yawning",
+    "tired",
+    "front",
+    "no prop",
+    "trap3"
+   ],
+   "pose": "yawning",
+   "view": "front",
+   "prop": null,
+   "traps": [
+    3
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_yawning_threeq.png",
+   "id": "mascot_yawning_threeq",
+   "kind": "cutout",
+   "description": "Mascot yawning, threeq view",
+   "tags": [
+    "mascot",
+    "yawning",
+    "tired",
+    "threeq",
+    "no prop",
+    "trap3"
+   ],
+   "pose": "yawning",
+   "view": "threeq",
+   "prop": null,
+   "traps": [
+    3
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_cash_fan_front.png",
+   "id": "mascot_cash_fan_front",
+   "kind": "cutout",
+   "description": "Mascot with cash: fan, front view",
+   "tags": [
+    "mascot",
+    "cash",
+    "fan",
+    "excited",
+    "front",
+    "trap8",
+    "trap2"
+   ],
+   "pose": "fan",
+   "view": "front",
+   "prop": "cash",
+   "traps": [
+    8,
+    2
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_cash_throw_front.png",
+   "id": "mascot_cash_throw_front",
+   "kind": "cutout",
+   "description": "Mascot with cash: throw, front view",
+   "tags": [
+    "mascot",
+    "cash",
+    "throw",
+    "excited",
+    "front",
+    "trap8",
+    "trap2"
+   ],
+   "pose": "throw",
+   "view": "front",
+   "prop": "cash",
+   "traps": [
+    8,
+    2
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 8
+  },
+  {
+   "filename": "mascot_cash_hand_over_threeq.png",
+   "id": "mascot_cash_hand_over_threeq",
+   "kind": "cutout",
+   "description": "Mascot with cash: hand over, threeq view",
+   "tags": [
+    "mascot",
+    "cash",
+    "hand_over",
+    "neutral",
+    "threeq",
+    "trap8",
+    "trap2"
+   ],
+   "pose": "hand_over",
+   "view": "threeq",
+   "prop": "cash",
+   "traps": [
+    8,
+    2
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_cash_shocked_front.png",
+   "id": "mascot_cash_shocked_front",
+   "kind": "cutout",
+   "description": "Mascot with cash: shocked, front view",
+   "tags": [
+    "mascot",
+    "cash",
+    "shocked",
+    "shocked",
+    "front",
+    "trap8",
+    "trap5",
+    "trap2"
+   ],
+   "pose": "shocked",
+   "view": "front",
+   "prop": "cash",
+   "traps": [
+    8,
+    5,
+    2
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_card_swipe_front.png",
+   "id": "mascot_card_swipe_front",
+   "kind": "cutout",
+   "description": "Mascot with card: swipe, front view",
+   "tags": [
+    "mascot",
+    "card",
+    "swipe",
+    "excited",
+    "front",
+    "trap2"
+   ],
+   "pose": "swipe",
+   "view": "front",
+   "prop": "card",
+   "traps": [
+    2
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 8
+  },
+  {
+   "filename": "mascot_card_shocked_front.png",
+   "id": "mascot_card_shocked_front",
+   "kind": "cutout",
+   "description": "Mascot with card: shocked, front view",
+   "tags": [
+    "mascot",
+    "card",
+    "shocked",
+    "shocked",
+    "front",
+    "trap5",
+    "trap2"
+   ],
+   "pose": "shocked",
+   "view": "front",
+   "prop": "card",
+   "traps": [
+    5,
+    2
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_card_worried_front.png",
+   "id": "mascot_card_worried_front",
+   "kind": "cutout",
+   "description": "Mascot with card: worried, front view",
+   "tags": [
+    "mascot",
+    "card",
+    "worried",
+    "worried",
+    "front",
+    "trap7",
+    "trap5",
+    "trap2",
+    "trap1"
+   ],
+   "pose": "worried",
+   "view": "front",
+   "prop": "card",
+   "traps": [
+    7,
+    5,
+    2,
+    1
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 9
+  },
+  {
+   "filename": "mascot_phone_scroll_front.png",
+   "id": "mascot_phone_scroll_front",
+   "kind": "cutout",
+   "description": "Mascot with phone: scroll, front view",
+   "tags": [
+    "mascot",
+    "phone",
+    "scroll",
+    "tired",
+    "front",
+    "trap6",
+    "trap3"
+   ],
+   "pose": "scroll",
+   "view": "front",
+   "prop": "phone",
+   "traps": [
+    6,
+    3
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_phone_happy_front.png",
+   "id": "mascot_phone_happy_front",
+   "kind": "cutout",
+   "description": "Mascot with phone: happy, front view",
+   "tags": [
+    "mascot",
+    "phone",
+    "happy",
+    "happy",
+    "front",
+    "trap6"
+   ],
+   "pose": "happy",
+   "view": "front",
+   "prop": "phone",
+   "traps": [
+    6
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 9
+  },
+  {
+   "filename": "mascot_phone_point_threeq.png",
+   "id": "mascot_phone_point_threeq",
+   "kind": "cutout",
+   "description": "Mascot with phone: point, threeq view",
+   "tags": [
+    "mascot",
+    "phone",
+    "point",
+    "explaining",
+    "threeq",
+    "trap10",
+    "trap6"
+   ],
+   "pose": "point",
+   "view": "threeq",
+   "prop": "phone",
+   "traps": [
+    10,
+    6
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_phone_selfie_threeq.png",
+   "id": "mascot_phone_selfie_threeq",
+   "kind": "cutout",
+   "description": "Mascot with phone: selfie, threeq view",
+   "tags": [
+    "mascot",
+    "phone",
+    "selfie",
+    "happy",
+    "threeq",
+    "trap6"
+   ],
+   "pose": "selfie",
+   "view": "threeq",
+   "prop": "phone",
+   "traps": [
+    6
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_receipt_shocked_front.png",
+   "id": "mascot_receipt_shocked_front",
+   "kind": "cutout",
+   "description": "Mascot with receipt: shocked, front view",
+   "tags": [
+    "mascot",
+    "receipt",
+    "shocked",
+    "shocked",
+    "front",
+    "trap5",
+    "trap2"
+   ],
+   "pose": "shocked",
+   "view": "front",
+   "prop": "receipt",
+   "traps": [
+    5,
+    2
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 8
+  },
+  {
+   "filename": "mascot_receipt_angry_threeq.png",
+   "id": "mascot_receipt_angry_threeq",
+   "kind": "cutout",
+   "description": "Mascot with receipt: angry, threeq view",
+   "tags": [
+    "mascot",
+    "receipt",
+    "angry",
+    "angry",
+    "threeq",
+    "trap5",
+    "trap2"
+   ],
+   "pose": "angry",
+   "view": "threeq",
+   "prop": "receipt",
+   "traps": [
+    5,
+    2
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_piggy_bank_hold_front.png",
+   "id": "mascot_piggy_bank_hold_front",
+   "kind": "cutout",
+   "description": "Mascot with piggy bank: hold, front view",
+   "tags": [
+    "mascot",
+    "piggy_bank",
+    "hold",
+    "happy",
+    "front",
+    "trap7",
+    "trap4"
+   ],
+   "pose": "hold",
+   "view": "front",
+   "prop": "piggy_bank",
+   "traps": [
+    7,
+    4
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_piggy_bank_drop_coin_threeq.png",
+   "id": "mascot_piggy_bank_drop_coin_threeq",
+   "kind": "cutout",
+   "description": "Mascot with piggy bank: drop coin, threeq view",
+   "tags": [
+    "mascot",
+    "piggy_bank",
+    "drop_coin",
+    "neutral",
+    "threeq",
+    "trap7",
+    "trap4"
+   ],
+   "pose": "drop_coin",
+   "view": "threeq",
+   "prop": "piggy_bank",
+   "traps": [
+    7,
+    4
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 8
+  },
+  {
+   "filename": "mascot_piggy_bank_shake_front.png",
+   "id": "mascot_piggy_bank_shake_front",
+   "kind": "cutout",
+   "description": "Mascot with piggy bank: shake, front view",
+   "tags": [
+    "mascot",
+    "piggy_bank",
+    "shake",
+    "worried",
+    "front",
+    "trap7",
+    "trap5",
+    "trap4",
+    "trap1"
+   ],
+   "pose": "shake",
+   "view": "front",
+   "prop": "piggy_bank",
+   "traps": [
+    7,
+    5,
+    4,
+    1
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_piggy_bank_full_front.png",
+   "id": "mascot_piggy_bank_full_front",
+   "kind": "cutout",
+   "description": "Mascot with piggy bank: full, front view",
+   "tags": [
+    "mascot",
+    "piggy_bank",
+    "full",
+    "excited",
+    "front",
+    "trap7",
+    "trap4"
+   ],
+   "pose": "full",
+   "view": "front",
+   "prop": "piggy_bank",
+   "traps": [
+    7,
+    4
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_calendar_hold_front.png",
+   "id": "mascot_calendar_hold_front",
+   "kind": "cutout",
+   "description": "Mascot with calendar: hold, front view",
+   "tags": [
+    "mascot",
+    "calendar",
+    "hold",
+    "neutral",
+    "front",
+    "trap4",
+    "trap3"
+   ],
+   "pose": "hold",
+   "view": "front",
+   "prop": "calendar",
+   "traps": [
+    4,
+    3
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 8
+  },
+  {
+   "filename": "mascot_calendar_point_threeq.png",
+   "id": "mascot_calendar_point_threeq",
+   "kind": "cutout",
+   "description": "Mascot with calendar: point, threeq view",
+   "tags": [
+    "mascot",
+    "calendar",
+    "point",
+    "explaining",
+    "threeq",
+    "trap10",
+    "trap4",
+    "trap3"
+   ],
+   "pose": "point",
+   "view": "threeq",
+   "prop": "calendar",
+   "traps": [
+    10,
+    4,
+    3
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_calendar_worried_front.png",
+   "id": "mascot_calendar_worried_front",
+   "kind": "cutout",
+   "description": "Mascot with calendar: worried, front view",
+   "tags": [
+    "mascot",
+    "calendar",
+    "worried",
+    "worried",
+    "front",
+    "trap7",
+    "trap5",
+    "trap4",
+    "trap3",
+    "trap1"
+   ],
+   "pose": "worried",
+   "view": "front",
+   "prop": "calendar",
+   "traps": [
+    7,
+    5,
+    4,
+    3,
+    1
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_calendar_circle_threeq.png",
+   "id": "mascot_calendar_circle_threeq",
+   "kind": "cutout",
+   "description": "Mascot with calendar: circle, threeq view",
+   "tags": [
+    "mascot",
+    "calendar",
+    "circle",
+    "happy",
+    "threeq",
+    "trap4",
+    "trap3"
+   ],
+   "pose": "circle",
+   "view": "threeq",
+   "prop": "calendar",
+   "traps": [
+    4,
+    3
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_calendar_shocked_front.png",
+   "id": "mascot_calendar_shocked_front",
+   "kind": "cutout",
+   "description": "Mascot with calendar: shocked, front view",
+   "tags": [
+    "mascot",
+    "calendar",
+    "shocked",
+    "shocked",
+    "front",
+    "trap5",
+    "trap4",
+    "trap3",
+    "trap2"
+   ],
+   "pose": "shocked",
+   "view": "front",
+   "prop": "calendar",
+   "traps": [
+    5,
+    4,
+    3,
+    2
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_lottery_ticket_hold_front.png",
+   "id": "mascot_lottery_ticket_hold_front",
+   "kind": "cutout",
+   "description": "Mascot with lottery ticket: hold, front view",
+   "tags": [
+    "mascot",
+    "lottery_ticket",
+    "hold",
+    "excited",
+    "front",
+    "trap8"
+   ],
+   "pose": "hold",
+   "view": "front",
+   "prop": "lottery_ticket",
+   "traps": [
+    8
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_lottery_ticket_scratch_threeq.png",
+   "id": "mascot_lottery_ticket_scratch_threeq",
+   "kind": "cutout",
+   "description": "Mascot with lottery ticket: scratch, threeq view",
+   "tags": [
+    "mascot",
+    "lottery_ticket",
+    "scratch",
+    "happy",
+    "threeq",
+    "trap8"
+   ],
+   "pose": "scratch",
+   "view": "threeq",
+   "prop": "lottery_ticket",
+   "traps": [
+    8
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_pay_slip_open_front.png",
+   "id": "mascot_pay_slip_open_front",
+   "kind": "cutout",
+   "description": "Mascot with pay slip: open, front view",
+   "tags": [
+    "mascot",
+    "pay_slip",
+    "open",
+    "happy",
+    "front",
+    "trap3"
+   ],
+   "pose": "open",
+   "view": "front",
+   "prop": "pay_slip",
+   "traps": [
+    3
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_pay_slip_hand_over_threeq.png",
+   "id": "mascot_pay_slip_hand_over_threeq",
+   "kind": "cutout",
+   "description": "Mascot with pay slip: hand over, threeq view",
+   "tags": [
+    "mascot",
+    "pay_slip",
+    "hand_over",
+    "neutral",
+    "threeq",
+    "trap3"
+   ],
+   "pose": "hand_over",
+   "view": "threeq",
+   "prop": "pay_slip",
+   "traps": [
+    3
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_clipboard_fill_threeq.png",
+   "id": "mascot_clipboard_fill_threeq",
+   "kind": "cutout",
+   "description": "Mascot with clipboard: fill, threeq view",
+   "tags": [
+    "mascot",
+    "clipboard",
+    "fill",
+    "thinking",
+    "threeq",
+    "trap10",
+    "trap4"
+   ],
+   "pose": "fill",
+   "view": "threeq",
+   "prop": "clipboard",
+   "traps": [
+    10,
+    4
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_clipboard_show_front.png",
+   "id": "mascot_clipboard_show_front",
+   "kind": "cutout",
+   "description": "Mascot with clipboard: show, front view",
+   "tags": [
+    "mascot",
+    "clipboard",
+    "show",
+    "explaining",
+    "front",
+    "trap10",
+    "trap4"
+   ],
+   "pose": "show",
+   "view": "front",
+   "prop": "clipboard",
+   "traps": [
+    10,
+    4
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_test_paper_pencil_front.png",
+   "id": "mascot_test_paper_pencil_front",
+   "kind": "cutout",
+   "description": "Mascot with test paper: pencil, front view",
+   "tags": [
+    "mascot",
+    "test_paper",
+    "pencil",
+    "worried",
+    "front",
+    "trap10",
+    "trap7",
+    "trap5",
+    "trap1"
+   ],
+   "pose": "pencil",
+   "view": "front",
+   "prop": "test_paper",
+   "traps": [
+    10,
+    7,
+    5,
+    1
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 9
+  },
+  {
+   "filename": "mascot_test_paper_think_threeq.png",
+   "id": "mascot_test_paper_think_threeq",
+   "kind": "cutout",
+   "description": "Mascot with test paper: think, threeq view",
+   "tags": [
+    "mascot",
+    "test_paper",
+    "think",
+    "thinking",
+    "threeq",
+    "trap10",
+    "trap1"
+   ],
+   "pose": "think",
+   "view": "threeq",
+   "prop": "test_paper",
+   "traps": [
+    10,
+    1
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_car_keys_hold_front.png",
+   "id": "mascot_car_keys_hold_front",
+   "kind": "cutout",
+   "description": "Mascot with car keys: hold, front view",
+   "tags": [
+    "mascot",
+    "car_keys",
+    "hold",
+    "happy",
+    "front",
+    "trap9"
+   ],
+   "pose": "hold",
+   "view": "front",
+   "prop": "car_keys",
+   "traps": [
+    9
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_car_keys_dangle_threeq.png",
+   "id": "mascot_car_keys_dangle_threeq",
+   "kind": "cutout",
+   "description": "Mascot with car keys: dangle, threeq view",
+   "tags": [
+    "mascot",
+    "car_keys",
+    "dangle",
+    "sly",
+    "threeq",
+    "trap9"
+   ],
+   "pose": "dangle",
+   "view": "threeq",
+   "prop": "car_keys",
+   "traps": [
+    9
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_fence_envious_front.png",
+   "id": "mascot_fence_envious_front",
+   "kind": "cutout",
+   "description": "Mascot with fence: envious, front view",
+   "tags": [
+    "mascot",
+    "fence",
+    "envious",
+    "envious",
+    "front",
+    "trap9"
+   ],
+   "pose": "envious",
+   "view": "front",
+   "prop": "fence",
+   "traps": [
+    9
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_fence_envious_side_threeq.png",
+   "id": "mascot_fence_envious_side_threeq",
+   "kind": "cutout",
+   "description": "Mascot with fence: envious side, threeq view",
+   "tags": [
+    "mascot",
+    "fence",
+    "envious_side",
+    "envious",
+    "threeq",
+    "trap9"
+   ],
+   "pose": "envious_side",
+   "view": "threeq",
+   "prop": "fence",
+   "traps": [
+    9
+   ],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "plate_alux_arena_skyline_spotlight.png",
+   "id": "plate_alux_arena_skyline_spotlight",
+   "kind": "plate",
+   "description": "Arena exterior skyline in gold line art with a spotlight (title plate)",
+   "tags": [
+    "alux",
+    "imported",
+    "trap2",
+    "arena",
+    "stadium",
+    "skyline",
+    "spotlight",
+    "title",
+    "basketball",
+    "sold out"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "1536*864",
+   "seed": null
+  },
+  {
+   "filename": "plate_alux_ticket_booth_sold_out.png",
+   "id": "plate_alux_ticket_booth_sold_out",
+   "kind": "plate",
+   "description": "Ticket booth with striped awning and a red SOLD OUT board (text in plate)",
+   "tags": [
+    "alux",
+    "imported",
+    "trap2",
+    "ticket booth",
+    "sold out",
+    "tickets",
+    "queue",
+    "kiosk"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "1536*864",
+   "seed": null
+  },
+  {
+   "filename": "plate_alux_arena_concourse.png",
+   "id": "plate_alux_arena_concourse",
+   "kind": "plate",
+   "description": "Empty arena seating bowl and concourse with a doorway",
+   "tags": [
+    "alux",
+    "imported",
+    "trap2",
+    "arena",
+    "stadium",
+    "concourse",
+    "crowd",
+    "seats",
+    "basketball"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "1536*864",
+   "seed": null
+  },
+  {
+   "filename": "plate_alux_split_podiums_city.png",
+   "id": "plate_alux_split_podiums_city",
+   "kind": "plate",
+   "description": "Two spotlit round podiums on a city silhouette, split stage (CARD / CASH labels in plate)",
+   "tags": [
+    "alux",
+    "imported",
+    "trap2",
+    "split",
+    "comparison",
+    "two sides",
+    "podium",
+    "card",
+    "cash"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "1536*864",
+   "seed": null
+  },
+  {
+   "filename": "plate_alux_stage_spotlight.png",
+   "id": "plate_alux_stage_spotlight",
+   "kind": "plate",
+   "description": "Dark stage with a spotlight cone and gold dust",
+   "tags": [
+    "alux",
+    "imported",
+    "trap2",
+    "stage",
+    "spotlight",
+    "thinking",
+    "question",
+    "dark"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "1536*864",
+   "seed": null
+  },
+  {
+   "filename": "plate_alux_card_vs_cash_stage.png",
+   "id": "plate_alux_card_vs_cash_stage",
+   "kind": "plate",
+   "description": "Two thought clouds above a split floor, stacks of bills (CARD / CASH labels in plate)",
+   "tags": [
+    "alux",
+    "imported",
+    "trap2",
+    "comparison",
+    "card",
+    "cash",
+    "thought cloud",
+    "bills",
+    "stack"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "1536*864",
+   "seed": null
+  },
+  {
+   "filename": "plate_alux_tickets_backdrop.png",
+   "id": "plate_alux_tickets_backdrop",
+   "kind": "plate",
+   "description": "Dark backdrop with two big ticket shapes (data-card plate)",
+   "tags": [
+    "alux",
+    "imported",
+    "trap2",
+    "tickets",
+    "data card",
+    "backdrop",
+    "dark"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "1536*864",
+   "seed": null
+  },
+  {
+   "filename": "plate_alux_desk_lamp_book.png",
+   "id": "plate_alux_desk_lamp_book",
+   "kind": "plate",
+   "description": "Wooden desk with a lamp, a book and paper stack in a spotlight",
+   "tags": [
+    "alux",
+    "imported",
+    "trap2",
+    "desk",
+    "lamp",
+    "book",
+    "research",
+    "paper",
+    "source"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "1536*864",
+   "seed": null
+  },
+  {
+   "filename": "plate_alux_open_notebook_closeup.png",
+   "id": "plate_alux_open_notebook_closeup",
+   "kind": "plate",
+   "description": "Giant open notebook with a bookmark and a pen, close-up",
+   "tags": [
+    "alux",
+    "imported",
+    "trap2",
+    "notebook",
+    "book",
+    "pen",
+    "paper",
+    "study",
+    "research",
+    "note"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "1536*864",
+   "seed": null
+  },
+  {
+   "filename": "plate_alux_shop_front_card_reader.png",
+   "id": "plate_alux_shop_front_card_reader",
+   "kind": "plate",
+   "description": "Night shop front with a lit window and a card reader on the counter",
+   "tags": [
+    "alux",
+    "imported",
+    "trap2",
+    "shop",
+    "card reader",
+    "tap",
+    "pay",
+    "night",
+    "street",
+    "checkout"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "1536*864",
+   "seed": null
+  },
+  {
+   "filename": "plate_alux_counter_cash_box.png",
+   "id": "plate_alux_counter_cash_box",
+   "kind": "plate",
+   "description": "Counter with cash spilling from an open box",
+   "tags": [
+    "alux",
+    "imported",
+    "trap2",
+    "counter",
+    "cash",
+    "box",
+    "till",
+    "money",
+    "shop"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "1536*864",
+   "seed": null
+  },
+  {
+   "filename": "plate_alux_skyline_checklist.png",
+   "id": "plate_alux_skyline_checklist",
+   "kind": "plate",
+   "description": "Gold city skyline with a checklist card and receipt roll (checklist text in plate)",
+   "tags": [
+    "alux",
+    "imported",
+    "trap2",
+    "skyline",
+    "checklist",
+    "receipt",
+    "tick",
+    "city",
+    "call to action"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "1536*864",
+   "seed": null
+  },
+  {
+   "filename": "mascot_alux_point_left.png",
+   "id": "mascot_alux_point_left",
+   "kind": "cutout",
+   "description": "Mascot pointing to the left, calm smile",
+   "tags": [
+    "mascot",
+    "alux",
+    "imported",
+    "trap2",
+    "pointing",
+    "explaining",
+    "threeq",
+    "no prop"
+   ],
+   "pose": "pointing",
+   "view": "threeq",
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "485*769",
+   "seed": null
+  },
+  {
+   "filename": "mascot_alux_hold_ticket.png",
+   "id": "mascot_alux_hold_ticket",
+   "kind": "cutout",
+   "description": "Mascot holding up a white ticket, happy",
+   "tags": [
+    "mascot",
+    "alux",
+    "imported",
+    "trap2",
+    "hold_ticket",
+    "happy",
+    "front",
+    "ticket"
+   ],
+   "pose": "hold_ticket",
+   "view": "front",
+   "prop": "ticket",
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "503*774",
+   "seed": null
+  },
+  {
+   "filename": "mascot_alux_card_hold_threeq.png",
+   "id": "mascot_alux_card_hold_threeq",
+   "kind": "cutout",
+   "description": "Mascot holding a gold card at chest height",
+   "tags": [
+    "mascot",
+    "alux",
+    "imported",
+    "trap2",
+    "card_hold",
+    "neutral",
+    "threeq",
+    "card"
+   ],
+   "pose": "card_hold",
+   "view": "threeq",
+   "prop": "card",
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "479*762",
+   "seed": null
+  },
+  {
+   "filename": "mascot_alux_card_hold_happy.png",
+   "id": "mascot_alux_card_hold_happy",
+   "kind": "cutout",
+   "description": "Mascot holding a gold card up, big smile",
+   "tags": [
+    "mascot",
+    "alux",
+    "imported",
+    "trap2",
+    "card_hold",
+    "happy",
+    "front",
+    "card"
+   ],
+   "pose": "card_hold",
+   "view": "front",
+   "prop": "card",
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "479*766",
+   "seed": null
+  },
+  {
+   "filename": "mascot_alux_cash_fan_worried.png",
+   "id": "mascot_alux_cash_fan_worried",
+   "kind": "cutout",
+   "description": "Mascot holding a fan of green bills, sweat drop, worried",
+   "tags": [
+    "mascot",
+    "alux",
+    "imported",
+    "trap2",
+    "cash_fan",
+    "worried",
+    "front",
+    "cash"
+   ],
+   "pose": "cash_fan",
+   "view": "front",
+   "prop": "cash",
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "564*773",
+   "seed": null
+  },
+  {
+   "filename": "mascot_alux_thinking_worried.png",
+   "id": "mascot_alux_thinking_worried",
+   "kind": "cutout",
+   "description": "Mascot with hand on chin, sweat drop, thinking",
+   "tags": [
+    "mascot",
+    "alux",
+    "imported",
+    "trap2",
+    "thinking",
+    "worried",
+    "front",
+    "no prop"
+   ],
+   "pose": "thinking",
+   "view": "front",
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "436*795",
+   "seed": null
+  },
+  {
+   "filename": "mascot_alux_card_hold_up.png",
+   "id": "mascot_alux_card_hold_up",
+   "kind": "cutout",
+   "description": "Mascot holding a gold card up beside his face, smiling",
+   "tags": [
+    "mascot",
+    "alux",
+    "imported",
+    "trap2",
+    "card_hold",
+    "happy",
+    "front",
+    "card"
+   ],
+   "pose": "card_hold",
+   "view": "front",
+   "prop": "card",
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "442*767",
+   "seed": null
+  },
+  {
+   "filename": "mascot_alux_cash_hold_small.png",
+   "id": "mascot_alux_cash_hold_small",
+   "kind": "cutout",
+   "description": "Mascot holding a few green bills in one hand",
+   "tags": [
+    "mascot",
+    "alux",
+    "imported",
+    "trap2",
+    "cash_hold",
+    "neutral",
+    "threeq",
+    "cash"
+   ],
+   "pose": "cash_hold",
+   "view": "threeq",
+   "prop": "cash",
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "466*777",
+   "seed": null
+  },
+  {
+   "filename": "mascot_alux_surprised_arms_up.png",
+   "id": "mascot_alux_surprised_arms_up",
+   "kind": "cutout",
+   "description": "Mascot arms spread wide, mouth open, surprised",
+   "tags": [
+    "mascot",
+    "alux",
+    "imported",
+    "trap2",
+    "surprised",
+    "surprised",
+    "front",
+    "no prop"
+   ],
+   "pose": "surprised",
+   "view": "front",
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "572*758",
+   "seed": null
+  },
+  {
+   "filename": "mascot_alux_point_book.png",
+   "id": "mascot_alux_point_book",
+   "kind": "cutout",
+   "description": "Mascot pointing with an outstretched arm holding a small book",
+   "tags": [
+    "mascot",
+    "alux",
+    "imported",
+    "trap2",
+    "pointing",
+    "explaining",
+    "threeq",
+    "book"
+   ],
+   "pose": "pointing",
+   "view": "threeq",
+   "prop": "book",
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "588*762",
+   "seed": null
+  },
+  {
+   "filename": "mascot_alux_idle_calm.png",
+   "id": "mascot_alux_idle_calm",
+   "kind": "cutout",
+   "description": "Mascot standing relaxed, calm face",
+   "tags": [
+    "mascot",
+    "alux",
+    "imported",
+    "trap2",
+    "idle",
+    "neutral",
+    "threeq",
+    "no prop"
+   ],
+   "pose": "idle",
+   "view": "threeq",
+   "prop": null,
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "416*784",
+   "seed": null
+  },
+  {
+   "filename": "mascot_alux_phone_look.png",
+   "id": "mascot_alux_phone_look",
+   "kind": "cutout",
+   "description": "Mascot looking down at a phone in one hand",
+   "tags": [
+    "mascot",
+    "alux",
+    "imported",
+    "trap2",
+    "phone_look",
+    "neutral",
+    "front",
+    "phone"
+   ],
+   "pose": "phone_look",
+   "view": "front",
+   "prop": "phone",
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "430*767",
+   "seed": null
+  },
+  {
+   "filename": "mascot_alux_phone_shocked.png",
+   "id": "mascot_alux_phone_shocked",
+   "kind": "cutout",
+   "description": "Mascot shocked, phone lowered in one hand",
+   "tags": [
+    "mascot",
+    "alux",
+    "imported",
+    "trap2",
+    "phone_shocked",
+    "shocked",
+    "front",
+    "phone"
+   ],
+   "pose": "phone_shocked",
+   "view": "front",
+   "prop": "phone",
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "428*764",
+   "seed": null
+  },
+  {
+   "filename": "mascot_alux_card_hold_grin.png",
+   "id": "mascot_alux_card_hold_grin",
+   "kind": "cutout",
+   "description": "Mascot holding a gold card out, big grin",
+   "tags": [
+    "mascot",
+    "alux",
+    "imported",
+    "trap2",
+    "card_hold",
+    "happy",
+    "front",
+    "card"
+   ],
+   "pose": "card_hold",
+   "view": "front",
+   "prop": "card",
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "526*782",
+   "seed": null
+  },
+  {
+   "filename": "mascot_alux_receipt_point.png",
+   "id": "mascot_alux_receipt_point",
+   "kind": "cutout",
+   "description": "Mascot grinning, holding out a receipt with one hand",
+   "tags": [
+    "mascot",
+    "alux",
+    "imported",
+    "trap2",
+    "receipt_point",
+    "happy",
+    "threeq",
+    "receipt"
+   ],
+   "pose": "receipt_point",
+   "view": "threeq",
+   "prop": "receipt",
+   "traps": [
+    2
+   ],
+   "imported": true,
+   "size": "560*770",
+   "seed": null
+  },
+  {
+   "filename": "plate_mansion_estate.png",
+   "id": "plate_mansion_estate",
+   "kind": "plate",
+   "description": "Grand old mansion with formal gardens (old money estate)",
+   "tags": [
+    "mansion",
+    "estate",
+    "old money",
+    "house",
+    "wealth",
+    "garden",
+    "inheritance"
+   ],
+   "pose": null,
+   "view": null,
+   "prop": null,
+   "traps": [],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  },
+  {
+   "filename": "mascot_family_child_front.png",
+   "id": "mascot_family_child_front",
+   "kind": "cutout",
+   "description": "Mascot kneeling beside a child (~10), explaining with a notebook and coins, front view",
+   "tags": [
+    "mascot",
+    "child",
+    "family",
+    "parent",
+    "teaching",
+    "notebook",
+    "coins",
+    "happy",
+    "front"
+   ],
+   "pose": "family_child",
+   "view": "front",
+   "prop": "notebook",
+   "traps": [],
+   "imported": false,
+   "size": "1536*864",
+   "seed": 7
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+# Python deps for the long-form pipeline (scripts/oldmoney_*.py, scripts/moneypsych_*.py). Versions = the environment the shipped videos were built with (Python 3.12).
+# Also needs ffmpeg/ffprobe (>= 6) on PATH and Node >= 20 with `npm ci` run inside empires_short/.
+# Voice = Kokoro (hexgrad/Kokoro-82M, downloaded from Hugging Face on first run); captions/number-check = faster-whisper "small".
+kokoro==0.9.4
+misaki==0.9.4
+faster-whisper==1.2.1
+numpy>=2.0
+soundfile>=0.13
+pillow>=11
+scipy>=1.14
+torch>=2.5

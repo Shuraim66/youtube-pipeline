@@ -1,0 +1,8 @@
+# AGENTS.md — read this first if you are an AI agent (Claude Code, Muse AI, Codex, …) working in this repo
+
+1. Read `CLAUDE.md` (hard rules: never upload/schedule/post without explicit approval, always `--expect-channel`, never invent facts, use only the source pack's facts) and `PROJECT_CONTEXT.md` (history, status, how everything was built).
+2. To build or change an **Aurelis long-form video** (mascot puppet + text cards + library visuals), follow **`playbooks/LONGFORM_BUILD.md`** exactly. Quality bar = `playbooks/reference/oldmoney_reference_*.jpg` and the rules in `playbooks/PUPPET_BEAT_RULES.md` + `playbooks/LONGFORM_RETENTION.md`.
+3. Before building run `python scripts/longform_preflight.py` (it must print `PREFLIGHT OK`). Setup: `pip install -r requirements-longform.txt`, `cd empires_short && npm ci`, ffmpeg on PATH.
+4. Stop and show the user at the plan gate (script + beat table + gaps + cost) and at the render gate (contact sheet + phone stills + loudness). Do not upload. Do not spend money (image generation) without a stated cap approved by the user. Never delete untracked files without moving them somewhere recoverable first (a clean-up once destroyed this pipeline).
+5. Shorts/other formats: `playbooks/V2_WORKFLOW.md`.
+6. **Images:** if you can create images, you can add new mascot poses, props and backgrounds yourself, free: follow `playbooks/LONGFORM_BUILD.md` section 5 (prompt template, references in `assets/mascot/`, `python scripts/library_add_image.py`). If you have desktop/file access, save generated images anywhere, open them to check them, and pass the path to the script. Show new poses to the user before they go into anything uploaded.
