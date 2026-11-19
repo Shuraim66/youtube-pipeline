@@ -34,7 +34,7 @@ def main():
         kind, a, g, pos = P.parse_m(pb["m"])
         if kind == "puppet":
             cuts.append(dict(type="puppet", expr=a, gesture=None if g == "rest" else g, x=X[pos] + (40 if pos == "R" else 0), h=PUPPET_H,
-                             gFrom=round(max(0.25, rs(spec["dc"]["at"]) - 0.1) if spec.get("dc") and g == "pointLeft" else 0.35, 2), gTo=round(b["dur"] - 0.1, 2)))
+                             gFrom=round(b["start"] + (max(0.25, rs(spec["dc"]["at"]) - 0.1) if spec.get("dc") and g == "pointLeft" else 0.35), 2), gTo=round(b["start"] + b["dur"] - 0.1, 2)))  # ABSOLUTE comp time: the locked Puppet resolves cues against global time
         elif kind == "library":
             f = f"mascot_{a}.png"
             if f not in sizes: sizes[f] = Image.open(LIB / f).size

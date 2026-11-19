@@ -50,6 +50,9 @@ The scripts in `scripts/` were run with `/home/alpha/products/whop-clipper/.venv
 * Brand chip must not share the top-left with a title card; hide the chip while a title card is up. Two-source lines must fit the pill on one line (shorten wording) — no wrapped source lines.
 * Never add a "full video / N habits in the full video" CTA unless that long-form exists.
 * Puppet pointing starts only when the card it points at is visible.
+* **Puppet gesture cue times are ABSOLUTE composition seconds** (the locked Puppet uses `frame / fps`; there is no `<Sequence>` offset). `data.json` `gFrom`/`gTo` must be `beat.start + offset`. Beat-relative values only work in beat 1 (fixed 2026-11-20; found by the Muse test). After any gesture change, check frames inside the beat: pointing starts only once the card is visible, explain/thumbsUp actually show.
+* Stamp geometry: the v1 `top 92` position overlaps the banner on the myth card, and `top 350` (v2) touches the divider/caption. Place it in clear space (verify at 390 px and full size) — e.g. beside the figure or over the card's top-right corner above the banner — and check it against the divider and caption, not only the banner.
+* End-card / final spoken line and the on-screen question must be the same words; change the script (approval gate) and re-voice, never just the card.
 * Git-status check for a copy-and-adapt test = new files + the 5 library files above; nothing deleted, no commits.
 
 New video: copy the nine `oldmoney_*` scripts to `<name>_*`, change the paths/titles/section order/`CH` names/`PRON`, write a new `<name>_spec.py`, point `entry.tsx` at a new comp (copy `src/oldmoney/`). Keep `src/puppet/Puppet.v2.0.locked.tsx` untouched (it is the locked mascot; changes go in a new version file).
